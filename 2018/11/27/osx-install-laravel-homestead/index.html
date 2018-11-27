@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Note for learning">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="jerry80409">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="osx 安裝 homestead 與 laravel">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Note for learning">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="PAWS">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>osx 安裝 homestead 與 laravel - PAWS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57149152-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MENU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jerry80409">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/install-laravel-homestead/harshil-gudka-455166-unsplash.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>osx 安裝 homestead 與 laravel</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-27
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/laravel/">#laravel</a> <a href="/tags/homestead/">#homestead</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/laravel/">laravel</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Vagrant"><a href="#Vagrant" class="headerlink" title="Vagrant"></a>Vagrant</h3><p>我對 vagrant 的理解就是, 它在 virtual-box, VMware 的架構上, 再做一層抽象, 方便在不同的 providers 建立 instance<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install vagrant</span><br></pre></td></tr></table></figure></p>
+<h3 id="VirtualBox"><a href="#VirtualBox" class="headerlink" title="VirtualBox"></a>VirtualBox</h3><p>用 virtual-box 長大的, 所以沒特別選用 hyper-v<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install virtualbox</span><br></pre></td></tr></table></figure></p>
+<h3 id="Homestead"><a href="#Homestead" class="headerlink" title="Homestead"></a>Homestead</h3><p>簡單的理解為 image, 裡面包含 ubuntu 16.04, mysql, nginx, 基本的 php 運作環境與相關套件<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vagrant box add laravel/homestead       <span class="comment"># install vagrant VM</span></span><br><span class="line">vagrant box list                        <span class="comment"># list vagrant VMs</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Initial-Homestead"><a href="#Initial-Homestead" class="headerlink" title="Initial Homestead"></a>Initial Homestead</h3><p>這個步驟, 主要用來初始化 Homestead, 對應 local 的 port, cpu, memory, etc., 下面有簡單的對 Homestead.yml 修改的範例<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/laravel/homestead.git ~/Homestead</span><br><span class="line"><span class="built_in">cd</span> ~/Homestead</span><br><span class="line">git checkout v7.9.0</span><br><span class="line">bash init.sh</span><br></pre></td></tr></table></figure></p>
+<h3 id="Build-a-Laravel-Project"><a href="#Build-a-Laravel-Project" class="headerlink" title="Build a Laravel Project"></a>Build a Laravel Project</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir -p ~/code/</span><br><span class="line"><span class="built_in">cd</span>  ~/code</span><br><span class="line">composer create-project --prefer-dist laravel/laravel blog</span><br></pre></td></tr></table></figure>
+<h3 id="Edit-the-Homestead-yml"><a href="#Edit-the-Homestead-yml" class="headerlink" title="Edit the Homestead.yml"></a>Edit the Homestead.yml</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Homestead</span><br><span class="line">vim Homestead.yml</span><br><span class="line">folders:</span><br><span class="line">    - map: ~/code/blog</span><br><span class="line">      to: /home/vagrant/code/blog</span><br><span class="line">sites:</span><br><span class="line">    - map: blog.app</span><br><span class="line">      to: /home/vagrant/code/blog/public</span><br></pre></td></tr></table></figure>
+<h3 id="Update-Host"><a href="#Update-Host" class="headerlink" title="Update Host"></a>Update Host</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure>
+<p>添加<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">192.168.10.10   blog.app</span><br><span class="line">Reload Vagrant</span><br><span class="line">vagrant reload --provision</span><br></pre></td></tr></table></figure></p>
+<p>我在這階段, 遇到了 Vagrant up times out<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Timed out while waiting for the machine to boot. This means that</span><br><span class="line">Vagrant was unable to communicate with the guest machine within</span><br><span class="line">the configured (&quot;config.vm.boot_timeout&quot; value) time period.</span><br><span class="line"></span><br><span class="line">If the box appears to be booting properly, you may want to increase</span><br><span class="line">the timeout (&quot;config.vm.boot_timeout&quot;) value.</span><br></pre></td></tr></table></figure></p>
+<p>解決方式, 參考 <a href="https://stackoverflow.com/questions/41064388/laravel-homestead-vagrant-up-times-out" target="_blank" rel="noopener">stackoverflow</a><br>是把 virtual-box 的 網路已連接 勾選<br><img src="/img/install-laravel-homestead/virtual-box-cable-connected.png" alt="virtual-box-cable-connected"></p>
+<p>記得重新 reload<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vagrant reload --provision</span><br></pre></td></tr></table></figure></p>
+<h3 id="Initial-Project"><a href="#Initial-Project" class="headerlink" title="Initial Project"></a>Initial Project</h3><p>Homestead 的開發環境, 真的對第一次寫 laravel 有點難度, 要手動設定一堆東西 XD<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vagrant ssh</span><br><span class="line"><span class="built_in">cd</span> ~/code/blog</span><br><span class="line">cp .env.example .env</span><br><span class="line">php artisan key:generate    <span class="comment"># 產生 app key</span></span><br></pre></td></tr></table></figure></p>
+<p>建立 database<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mysql -uhomestead -p</span><br><span class="line">CREATE DATABASE homestead CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;</span><br><span class="line"><span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure></p>
+<p>建立 table schema<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">php artisan migrate</span><br></pre></td></tr></table></figure></p>
+<h3 id="Https-not-working"><a href="#Https-not-working" class="headerlink" title="Https not working"></a>Https not working</h3><p>其實 localhost 不用這麼糾結 https, 但我有強迫症, 因為 <a href="https://github.com/laravel/homestead/issues/754" target="_blank" rel="noopener">#754 Issue</a> Https Not working, issue 裡面給的參考是把 <code>Homestead.yml</code> 的 sites 做調整, 把原本的 blog.app 更改為 blog.localhost 或 blog.test, 但 blog.localhost 但在 mac OS 在解析 host name 會無限循環, 所以在 mac OS 上只能用 *.test, 參考這個 <a href="https://github.com/laravel/homestead/pull/697" target="_blank" rel="noopener">PR</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sites:</span><br><span class="line">    - map: blog.test</span><br><span class="line">      to: /home/vagrant/code/blog/public</span><br></pre></td></tr></table></figure>
+<p>記得 <code>/etc/hosts</code> 也要修改<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">192.168.10.10   blog.test</span><br></pre></td></tr></table></figure></p>
+<p>再 Reload 一次, 好雷啊 Orz<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vagrant reload --provision</span><br></pre></td></tr></table></figure></p>
+<p>然後, Chrome 打開, 讓我哭一次<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">http://blog.test/   # 可以瀏覽</span><br><span class="line">https://blog.test/  # 不能瀏覽 Tears</span><br></pre></td></tr></table></figure></p>
+<p>因為 <a href="https://github.com/laravel/homestead/issues/834" target="_blank" rel="noopener">#834 Issue</a>, <code>Homestead certificate</code> 不被 Chrome 信任,<br>讓我擦乾眼淚, 重新來過…</p>
+<h3 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h3><p>參考 <a href="https://stackoverflow.com/questions/48969083/how-to-get-https-certificate-working-on-local-laravel-homestead-site/49612084#49612084" target="_blank" rel="noopener">stackoverflow</a><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Homestead</span><br><span class="line">vagrant ssh -c <span class="string">'cat /etc/nginx/ssl/blog.test.crt'</span> &gt;blog.test.crt    <span class="comment"># 把 ssl crt 複製到 localhost</span></span><br></pre></td></tr></table></figure></p>
+<p>直接點擊 blog.test.crt 把設定為 永遠信任</p>
+<h3 id="解法2"><a href="#解法2" class="headerlink" title="解法2"></a>解法2</h3><p><a href="https://laravel-china.org/articles/7359/let-your-homestead-site-support-https" target="_blank" rel="noopener">homestead support https</a></p>
+<h3 id="Done"><a href="#Done" class="headerlink" title="Done"></a>Done</h3><p><img src="/img/install-laravel-homestead/laravel-homestead-https-demo.png" alt="homestead"></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jerry80409" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 jerry80409<br></p>
+                <p class="copyright text-muted">
+                    Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
+                    | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
+                    | Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'https-jerry80409-github-io';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>

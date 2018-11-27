@@ -2,9 +2,86 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://jerry80409.github.io/2018/11/26/hello-world/</loc>
+    <loc>https://jerry80409.github.io/2018/11/27/osx-install-python3/</loc>
     
-    <lastmod>2018-11-26T06:42:55.664Z</lastmod>
+    <lastmod>2018-11-27T13:35:05.433Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/27/spring-batch-fault-tolerant/</loc>
+    
+    <lastmod>2018-11-27T12:22:51.343Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/27/leet-code-575-distribute-candies/</loc>
+    
+    <lastmod>2018-11-27T07:20:26.429Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/27/spring-boot-conditionally-enable-scheduleing/</loc>
+    
+    <lastmod>2018-11-27T07:11:51.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/27/osx-install-laravel-homestead/</loc>
+    
+    <lastmod>2018-11-27T06:38:45.213Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/26/google-trends-hacking/</loc>
+    
+    <lastmod>2018-11-26T15:10:35.569Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/26/basic-shell/</loc>
+    
+    <lastmod>2018-11-26T15:00:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/26/the-art-of-unit-testing-note-ch3/</loc>
+    
+    <lastmod>2018-11-26T14:47:43.016Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/05/25/the-art-of-unit-testing-note-ch1-ch2/</loc>
+    
+    <lastmod>2018-11-26T14:46:22.815Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/05/25/hello-world/</loc>
+    
+    <lastmod>2018-11-26T13:50:31.544Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/categories/index.html</loc>
+    
+    <lastmod>2018-11-26T12:32:37.906Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/tags/index.html</loc>
+    
+    <lastmod>2018-11-26T12:32:36.263Z</lastmod>
     
   </url>
   

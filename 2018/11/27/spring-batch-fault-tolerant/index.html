@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Note for learning">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="jerry80409">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="spring-batch-fault-tolerant">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Note for learning">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="PAWS">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>spring-batch-fault-tolerant - PAWS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57149152-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MENU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jerry80409">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/spring-batch-fault-tolerant/johann-siemens-591-unsplash.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>spring-batch-fault-tolerant</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-27
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/spring-boot/">#spring-boot</a> <a href="/tags/spring-batch/">#spring-batch</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/spring-boot/">spring-boot</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p><strong>spring-batch</strong> 其實是很深的東西, 其中的容錯性 <code>fault-tolerant</code> 是個很棒的設計, 在批次處理中如果因為某些 exception 或是 http timeout exception 發生時, 只要指定好 exception handler, spring-batch 會自動重新運行該失敗的 step, 不需要整個 job 重新來過, 可以節省很多時間跟運算成本。</p>
+<h3 id="Docs"><a href="#Docs" class="headerlink" title="Docs"></a>Docs</h3><ul>
+<li>Spring Batch - <a href="https://docs.spring.io/spring-batch/4.0.x/reference/html/index.html" target="_blank" rel="noopener">Reference Documentation</a></li>
+<li><a href="https://docs.spring.io/spring-batch/4.1.x/reference/html/step.html#stepRestart" target="_blank" rel="noopener">Step Restart</a></li>
+<li><a href="https://www.bookstack.cn/read/SpringBatchReferenceCN/README.md" target="_blank" rel="noopener">Spring Batch参考文档中文版</a></li>
+</ul>
+<h3 id="Configure-Job"><a href="#Configure-Job" class="headerlink" title="Configure Job"></a>Configure Job</h3><p>簡單示範一下, 大小寫轉換的 job。</p>
+<ol>
+<li>這個 job 只會有一個 step</li>
+<li>step 的 reader 操作, 用來讀取字串到 queue 裡面</li>
+<li>step 的 processor 操作, 用來將字串轉為 upper case</li>
+<li>step 的 writer 操作, 將處理完的字串 println 輸出</li>
+</ol>
+<h3 id="ItemReader"><a href="#ItemReader" class="headerlink" title="ItemReader"></a>ItemReader</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleReader</span> <span class="keyword">implements</span> <span class="title">ItemReader</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ConcurrentLinkedQueue&lt;String&gt; queue;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * for spring bean init</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        log.info(<span class="string">"init simple reader..."</span>);</span><br><span class="line">        queue = <span class="keyword">new</span> ConcurrentLinkedQueue&lt;&gt;();</span><br><span class="line">        queue.addAll(Arrays.asList(</span><br><span class="line">            <span class="string">"message 1"</span>, <span class="string">"message 2"</span>, <span class="string">"message 3"</span>, <span class="string">"message 4"</span>, <span class="string">"message 5"</span>,</span><br><span class="line">            <span class="string">"message 6"</span>, <span class="string">"message 7"</span>, <span class="string">"message 8"</span>, <span class="string">"message 9"</span></span><br><span class="line">        ));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">read</span><span class="params">()</span> <span class="keyword">throws</span> Exception, UnexpectedInputException, ParseException, NonTransientResourceException </span>&#123;</span><br><span class="line">        <span class="comment">// 一次輸出一個 message, 直到 queue 為空</span></span><br><span class="line">        <span class="keyword">return</span> queue.isEmpty() ? <span class="keyword">null</span> : queue.poll();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="ItemProcessor"><a href="#ItemProcessor" class="headerlink" title="ItemProcessor"></a>ItemProcessor</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleProcessor</span> <span class="keyword">implements</span> <span class="title">ItemProcessor</span>&lt;<span class="title">String</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">process</span><span class="params">(String msg)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"message 5"</span>.equals(msg)) &#123;</span><br><span class="line">            <span class="comment">// 簡單示範 message 5, 處理時必定會拋出自定義的 RetryException </span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RetryException(<span class="string">"message 5 was FAILED"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">"message 8"</span>.equals(msg)) &#123;</span><br><span class="line">            <span class="comment">// 簡單示範 message 8, 處理時必定會拋出自定義的 RetryException</span></span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RetryException(<span class="string">"message 8 was FAILED"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(<span class="string">"processing : &#123;&#125;"</span>, msg);</span><br><span class="line">        <span class="keyword">return</span> msg.toUpperCase();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="RetryException"><a href="#RetryException" class="headerlink" title="RetryException"></a>RetryException</h3><p>自定義的 RetryException, 當失敗的資料拋到這裡時, 可以做一些簡單的 log 或 notification<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RetryException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">RetryException</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(message);</span><br><span class="line">        log.warn(<span class="string">"Catch Retry Exception: &#123;&#125;"</span>, message); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="ItemWriter"><a href="#ItemWriter" class="headerlink" title="ItemWriter"></a>ItemWriter</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleWriter</span> <span class="keyword">implements</span> <span class="title">ItemWriter</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(List&lt;? extends String&gt; msgList)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        msgList.forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h3><p>當使用了 <code>.faultTolerant()</code> 必定需要 <code>.retry(RetryException.class)</code> 或 <code>.skip(RetryException.class)</code> 的配合。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableBatchProcessing</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FooJob</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> JobBuilderFactory jobBuilderFactory;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">public</span> StepBuilderFactory stepBuilderFactory;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span>(initMethod = <span class="string">"init"</span>)</span><br><span class="line">    <span class="meta">@StepScope</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleReader <span class="title">simpleReader</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleReader();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@StepScope</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleProcessor <span class="title">simpleProcessor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleProcessor();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="meta">@StepScope</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleWriter <span class="title">simpleWriter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleWriter();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Job <span class="title">simpleJob</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> jobBuilderFactory.get(<span class="string">"SIMPLE_JOB"</span>)</span><br><span class="line">            .incrementer(<span class="keyword">new</span> RunIdIncrementer())</span><br><span class="line">            .flow(simpleStep())     <span class="comment">// 在操作設計上, 個人比較喜歡用 flow, 在設計上更方便組合 step</span></span><br><span class="line">            .end()</span><br><span class="line">            .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Step <span class="title">simpleStep</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stepBuilderFactory.get(<span class="string">"SIMPLE_STEP"</span>)</span><br><span class="line">            .&lt;String, String&gt;chunk(<span class="number">1</span>)</span><br><span class="line">            .reader(simpleReader())</span><br><span class="line">            .processor(simpleProcessor())</span><br><span class="line">            .writer(simpleWriter())</span><br><span class="line">            .faultTolerant()                    <span class="comment">// 開啟容錯設定</span></span><br><span class="line">            .retry(RetryException.class)        <span class="comment">// 當這個 step 某個階段拋出 RetryException</span></span><br><span class="line">            .backOffPolicy(backOfFiveSec())     <span class="comment">// wait 5 sec</span></span><br><span class="line">            .retryLimit(<span class="number">3</span>)                      <span class="comment">// 最多 retry 3 次</span></span><br><span class="line">            .skip(RetryException.class)         <span class="comment">// 當這個 step 某個階段拋出 RetryException 做 skip 處理</span></span><br><span class="line">            .skipLimit(<span class="number">1</span>)                       <span class="comment">// 最多 skip 1 次</span></span><br><span class="line">            .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> FixedBackOffPolicy <span class="title">backOfFiveSec</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        FixedBackOffPolicy fiveSecBackoff = <span class="keyword">new</span> FixedBackOffPolicy();</span><br><span class="line">        fiveSecBackoff.setBackOffPeriod(<span class="number">5_000</span>);</span><br><span class="line">        fiveSecBackoff.setSleeper(<span class="keyword">new</span> ThreadWaitSleeper());</span><br><span class="line">        <span class="keyword">return</span> fiveSecBackoff;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Scheduling-Launch-Job"><a href="#Scheduling-Launch-Job" class="headerlink" title="Scheduling Launch Job"></a>Scheduling Launch Job</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LaunchJob</span> <span class="keyword">implements</span> <span class="title">InitializingBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JobLauncher jobLauncher;</span><br><span class="line">    <span class="keyword">private</span> Job job;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterPropertiesSet</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        log.info(<span class="string">"launching foo-job..."</span>);</span><br><span class="line">        <span class="keyword">final</span> JobParameters jobParameters = <span class="keyword">new</span> JobParametersBuilder()</span><br><span class="line">            .addLong(<span class="string">"execution"</span>, System.currentTimeMillis())</span><br><span class="line">            .toJobParameters();</span><br><span class="line">        jobLauncher.run(job, jobParameters);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><ol>
+<li>當 message 5 發生錯誤時, 自動 Retry 3 次</li>
+<li>step 收到第 1 次 RetryExcpetion, 做 Skip 處理, 繼續往下執行</li>
+<li>當 message 8 發生錯誤時, 一樣 Retry 3 次</li>
+<li>step 收到第 2 次 RetryExcpetion, 已達到 skip 上限, 視為 step 失敗</li>
+<li>job 失敗</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">c.example.batchdemo.config.LaunchJob   : launching foo-job...</span><br><span class="line">o.s.b.a.batch.JpaBatchConfigurer         : JPA does not support custom isolation levels, so locks may not be taken when launching Jobs</span><br><span class="line">o.s.b.c.r.s.JobRepositoryFactoryBean     : No database type set, using meta data indicating: MYSQL</span><br><span class="line">o.s.b.c.l.support.SimpleJobLauncher      : No TaskExecutor has been set, defaulting to synchronous executor.</span><br><span class="line">o.s.b.c.l.support.SimpleJobLauncher      : Job: [FlowJob: [name=SIMPLE_JOB]] launched with the following parameters: [&#123;execution=1533892561146&#125;]</span><br><span class="line">o.s.batch.core.job.SimpleStepHandler     : Executing step: [SIMPLE_STEP]</span><br><span class="line">c.example.batchdemo.job.SimpleReader   : init simple reader...</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 1</span><br><span class="line">MESSAGE 1</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 2</span><br><span class="line">MESSAGE 2</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 3</span><br><span class="line">MESSAGE 3</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 4</span><br><span class="line">MESSAGE 4</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 5 was FAILED</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 5 was FAILED</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 5 was FAILED</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 6</span><br><span class="line">MESSAGE 6</span><br><span class="line">c.e.batchdemo.job.SimpleProcessor      : processing : message 7</span><br><span class="line">MESSAGE 7</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 8 was FAILED</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 8 was FAILED</span><br><span class="line">c.e.batchdemo.job.RetryException       : Catch Retry Exception: message 8 was FAILED</span><br><span class="line">o.s.batch.core.step.AbstractStep         : Encountered an error executing step SIMPLE_STEP in job SIMPLE_JOB</span><br><span class="line"></span><br><span class="line">org.springframework.batch.core.step.skip.SkipLimitExceededException: Skip limit of &apos;1&apos; exceeded</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jerry80409" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 jerry80409<br></p>
+                <p class="copyright text-muted">
+                    Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
+                    | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
+                    | Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'https-jerry80409-github-io';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
