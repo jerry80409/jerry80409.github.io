@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="PAWS">
+        <meta property="og:title" content="修正 git remote 資料夾大小寫問題">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018 - PAWS</title>
+    <title>修正 git remote 資料夾大小寫問題 - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -168,168 +168,88 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>修正 git remote 資料夾大小寫問題</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/git/">#git</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/git/">git</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/11/28/git-sync-remote-branch/">
-        <h1 class="post-title archive">
-            git-sync-remote-branch
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/11/28/git-case-sensitive/">
-        <h1 class="post-title archive">
-            修正 git remote 資料夾大小寫問題
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h3><p>團隊有統一命名原則, 所以得改一下</p>
+<h3 id="core-ignoreCase"><a href="#core-ignoreCase" class="headerlink" title="core.ignoreCase"></a>core.ignoreCase</h3><blockquote>
+<p>If true, this option enables various workarounds to enable Git to work better on filesystems that are not case sensitive, like FAT. For example, if a directory listing finds “makefile” when Git expects “Makefile”, Git will assume it is really the same file, and continue to remember it as “Makefile”.<br>The default is false, except git-clone[1] or git-init[1] will probe and set core.ignoreCase true if appropriate when the repository is created.</p>
+</blockquote>
+<p><code>core.ignoreCase</code> 預設是 <code>false</code> (大小寫敏感), 所以如果沒有改這個 config, <code>push</code> 上去就會長出兩個名稱一樣, 但大小寫寫法不一樣的資料夾, <code>FolderA</code> 跟 <code>foldera</code>, 但我還是不建議把 <code>core.ignoreCase</code> 改為 <code>true</code>, 怕之後開發一團亂之類的。</p>
+<h3 id="手動解"><a href="#手動解" class="headerlink" title="手動解"></a>手動解</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git mv improper_Case improve_case2</span><br><span class="line">git mv improve_case2 improve_case</span><br><span class="line">git commit -m <span class="string">"modified folder cases"</span></span><br></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/11/28/learning-git-branch/">
-        <h1 class="post-title archive">
-            Git branch 學習
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/11/28/keep-changelog/">
-        <h1 class="post-title archive">
-            Keep changelog
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/java-base64-snippet/">
-        <h1 class="post-title archive">
-            Java8 base64
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/owner-boilerplate/">
-        <h1 class="post-title archive">
-            微框架 owner-boilerplate 介紹
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/osx-install-python3/">
-        <h1 class="post-title archive">
-            osx-install-python3
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/spring-batch-fault-tolerant/">
-        <h1 class="post-title archive">
-            spring-batch-fault-tolerant
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/leet-code-575-distribute-candies/">
-        <h1 class="post-title archive">
-            leet-code-575-distribute-candies
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/spring-boot-conditionally-enable-scheduleing/">
-        <h1 class="post-title archive">
-            spring boot scheduleing 設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/2018/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
@@ -393,7 +313,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="PAWS">
+        <meta property="og:title" content="git-sync-remote-branch">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives: 2018 - PAWS</title>
+    <title>git-sync-remote-branch - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -168,168 +168,87 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('/img/git-sync-remote-branch/simon-launay-233889-unsplash.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>2018</h1>
+                <div class="post-heading">
+                    <h1>git-sync-remote-branch</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-11-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/git/">#git</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/git/">git</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/11/28/git-sync-remote-branch/">
-        <h1 class="post-title archive">
-            git-sync-remote-branch
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/11/28/git-case-sensitive/">
-        <h1 class="post-title archive">
-            修正 git remote 資料夾大小寫問題
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="同步-local-branch"><a href="#同步-local-branch" class="headerlink" title="同步 local branch"></a>同步 local branch</h3><p>在團隊開發過程中, 多多少少都會有些意外, 還好這個不是災難性的意外, (笑<br>這個問題是發生在 <code>git pull origin master</code>, <code>pull master</code> 其實會做兩件事 <code>git fetch</code> 跟 <code>git merge</code>, 因為本地還存在 a branch 所以會檢查 remote 的 a branch 做 merge, 但 remote 已經 PR 結束了, 被 merge 到 master 裡面, 按照開發流程 merge 完成的 branch 會被刪除, 所以 remote 的 a branch 沒了, 因此噴了一個警告。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error: cannot lock ref &apos;refs/remotes/origin/feature/lambda/dynamoDb&apos;: &apos;refs/remotes/origin/feature/lambda&apos; exists; cannot create &apos;refs/remotes/origin/feature/lambda/dynamoDb&apos;</span><br></pre></td></tr></table></figure></p>
+<p>SourceTree 給我的提示是這樣, 所以就查了一下 <code>prune</code> 的用途<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error: some local refs could not be updated; try running</span><br><span class="line"> &apos;git remote prune origin&apos; to remove any old, conflicting branches</span><br></pre></td></tr></table></figure></p>
+<h3 id="Git-remote-prune"><a href="#Git-remote-prune" class="headerlink" title="Git remote prune"></a>Git remote prune</h3><p>先看一下文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">prune</span><br><span class="line">           Deletes stale references associated with &lt;name&gt;. By default, stale</span><br><span class="line">           remote-tracking branches under &lt;name&gt; are deleted, but depending on</span><br><span class="line">           global configuration and the configuration of the remote we might</span><br><span class="line">           even prune local tags that haven&apos;t been pushed there. Equivalent to</span><br><span class="line">           git fetch --prune &lt;name&gt;, except that no new references will be</span><br><span class="line">           fetched.</span><br><span class="line"></span><br><span class="line">           See the PRUNING section of git-fetch(1) for what it&apos;ll prune</span><br><span class="line">           depending on various configuration.</span><br><span class="line"></span><br><span class="line">           With --dry-run option, report what branches will be pruned, but do</span><br><span class="line">           not actually prune them.</span><br></pre></td></tr></table></figure></p>
+<p>所以我比較建議的做法是, 先跑一次 <code>--dry-run</code> 看看哪些會刪除, 再執行 <code>prune origin</code>, 這樣就能保持 local 跟 remote 的 branch 同步。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote prune --dry-run origin    # 確定一下有沒有可能會刪錯</span><br><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/11/28/learning-git-branch/">
-        <h1 class="post-title archive">
-            Git branch 學習
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/11/28/keep-changelog/">
-        <h1 class="post-title archive">
-            Keep changelog
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/java-base64-snippet/">
-        <h1 class="post-title archive">
-            Java8 base64
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/owner-boilerplate/">
-        <h1 class="post-title archive">
-            微框架 owner-boilerplate 介紹
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/osx-install-python3/">
-        <h1 class="post-title archive">
-            osx-install-python3
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/spring-batch-fault-tolerant/">
-        <h1 class="post-title archive">
-            spring-batch-fault-tolerant
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/leet-code-575-distribute-candies/">
-        <h1 class="post-title archive">
-            leet-code-575-distribute-candies
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/27/spring-boot-conditionally-enable-scheduleing/">
-        <h1 class="post-title archive">
-            spring boot scheduleing 設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-27
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/2018/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
@@ -393,7 +312,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
