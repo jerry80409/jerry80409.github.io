@@ -273,7 +273,7 @@
 <h3 id="Jacoco-plugin"><a href="#Jacoco-plugin" class="headerlink" title="Jacoco plugin"></a>Jacoco plugin</h3><p>是 <strong>archetype-quickstart-jdk8</strong> 模板裡面的其中一個 plugin, 在 travis 的環境底下會自動執行</p>
 <ul>
 <li>在 <code>validate</code> phase 會做 <code>mvn jacoco:prepare-agent</code>, </li>
-<li>在 <code>test phase</code> 會做 <code>mvn jacoco:report</code>, </li>
+<li>在 <code>test</code> phase 會做 <code>mvn jacoco:report</code>, </li>
 <li><p>等同於底下這行指令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mvn jacoco:prepare-agent <span class="built_in">test</span> jacoco:report</span><br></pre></td></tr></table></figure>
 </li>
