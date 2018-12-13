@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="PAWS">
+        <meta property="og:title" content="java8-convert-list-to-map">
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Archives - PAWS</title>
+    <title>java8-convert-list-to-map - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -168,168 +168,87 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>java8-convert-list-to-map</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-12-13
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/java/">#java</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/java/">java</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/12/13/java8-convert-list-to-map/">
-        <h1 class="post-title archive">
-            java8-convert-list-to-map
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-13
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2018/12/12/leet-code-021-merge-two-sorted-lists/">
-        <h1 class="post-title archive">
-            leet-code-021-merge-two-sorted-lists
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-12
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Json-data"><a href="#Json-data" class="headerlink" title="Json data"></a>Json data</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;<span class="attr">"uid"</span>:<span class="string">"1"</span>,<span class="attr">"name"</span>:<span class="string">"阿花"</span>,<span class="attr">"age"</span>:<span class="number">38</span>,<span class="attr">"gender"</span>:<span class="string">"F"</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">"uid"</span>:<span class="string">"2"</span>,<span class="attr">"name"</span>:<span class="string">"阿瓜"</span>,<span class="attr">"age"</span>:<span class="number">28</span>,<span class="attr">"gender"</span>:<span class="string">"M"</span>&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="Entity"><a href="#Entity" class="headerlink" title="Entity"></a>Entity</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@JsonInclude</span>(JsonInclude.Include.NON_NULL)</span><br><span class="line"><span class="meta">@JsonPropertyOrder</span>(value = &#123;</span><br><span class="line">    <span class="string">"uid"</span>,</span><br><span class="line">    <span class="string">"name"</span>,</span><br><span class="line">    <span class="string">"age"</span>,</span><br><span class="line">    <span class="string">"gender"</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Customer</span> </span>&#123;</span><br><span class="line">    <span class="comment">// creativeId equals adId</span></span><br><span class="line">    <span class="meta">@JsonProperty</span>(<span class="string">"uid"</span>)</span><br><span class="line">    <span class="keyword">private</span> String uid;</span><br><span class="line">    <span class="meta">@JsonProperty</span>(<span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@JsonProperty</span>(<span class="string">"age"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line">    <span class="meta">@JsonProperty</span>(<span class="string">"gender"</span>)</span><br><span class="line">    <span class="keyword">private</span> String gender;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    List&lt;Customer&gt; customerList =</span><br><span class="line">        objectMapper.readValue(json, <span class="keyword">new</span> TypeReference&gt;() &#123;&#125;);</span><br><span class="line"></span><br><span class="line">    Map customerMap = customerList.stream()</span><br><span class="line">        .collect(Collectors.toMap(</span><br><span class="line">            Customer::getUid,       <span class="comment">// key</span></span><br><span class="line">            customer -&gt; customer)); <span class="comment">// value</span></span><br><span class="line"></span><br><span class="line">    System.out.println(objectMapper.writeValueAsString(customerMap));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"1"</span>: &#123;</span><br><span class="line">    <span class="attr">"uid"</span>: <span class="string">"1"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"阿花"</span>,</span><br><span class="line">    <span class="attr">"age"</span>: <span class="number">38</span>,</span><br><span class="line">    <span class="attr">"gender"</span>: <span class="string">"F"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"2"</span>: &#123;</span><br><span class="line">    <span class="attr">"uid"</span>: <span class="string">"2"</span>,</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"阿瓜"</span>,</span><br><span class="line">    <span class="attr">"age"</span>: <span class="number">28</span>,</span><br><span class="line">    <span class="attr">"gender"</span>: <span class="string">"M"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2018/12/12/leet-code-001-two-sum/">
-        <h1 class="post-title archive">
-            leet-code-001-two-sum
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-12
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2018/12/12/jq-cli/">
-        <h1 class="post-title archive">
-            jq 解析 json
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-12
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/12/07/setup-hexo/">
-        <h1 class="post-title archive">
-            Hexo 設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-07
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/12/07/mac-dev-setup/">
-        <h1 class="post-title archive">
-            mac 開發環境設定
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-12-07
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/30/maven-for-beginners/">
-        <h1 class="post-title archive">
-            Maven 新手教學
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-30
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/git-sync-remote-branch/">
-        <h1 class="post-title archive">
-            git-sync-remote-branch
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/git-case-sensitive/">
-        <h1 class="post-title archive">
-            修正 git remote 資料夾大小寫問題
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2018/11/28/learning-git-branch/">
-        <h1 class="post-title archive">
-            Git branch 學習
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2018-11-28
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr>
@@ -393,7 +312,7 @@
         var dsq = document.createElement('script');
         dsq.type = 'text/javascript';
         dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>

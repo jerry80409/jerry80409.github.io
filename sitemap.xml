@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2018/12/13/java8-convert-list-to-map/</loc>
+    
+    <lastmod>2018-12-13T09:36:27.002Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
     
-    <lastmod>2018-12-12T08:54:56.728Z</lastmod>
+    <lastmod>2018-12-12T08:59:08.851Z</lastmod>
     
   </url>
   
