@@ -2,6 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2018/12/24/spring-data-jpa-and-optional/</loc>
+    
+    <lastmod>2018-12-24T10:22:02.474Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/28/owner-boilerplate/</loc>
+    
+    <lastmod>2018-12-24T09:28:19.590Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/28/java-base64-snippet/</loc>
+    
+    <lastmod>2018-12-24T09:27:52.822Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/11/30/maven-for-beginners/</loc>
+    
+    <lastmod>2018-12-24T09:27:42.903Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/12/07/mac-dev-setup/</loc>
+    
+    <lastmod>2018-12-24T09:24:12.283Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2018/12/13/parse-a-uri-query-string-to-key-value/</loc>
     
     <lastmod>2018-12-19T07:58:12.733Z</lastmod>
@@ -44,20 +79,6 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/07/mac-dev-setup/</loc>
-    
-    <lastmod>2018-12-07T05:38:27.430Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2018/11/30/maven-for-beginners/</loc>
-    
-    <lastmod>2018-12-04T11:18:31.956Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jerry80409.github.io/2018/11/28/git-sync-remote-branch/</loc>
     
     <lastmod>2018-11-28T07:04:49.210Z</lastmod>
@@ -72,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/11/28/java-base64-snippet/</loc>
-    
-    <lastmod>2018-11-28T06:22:06.579Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jerry80409.github.io/2018/11/28/learning-git-branch/</loc>
     
     <lastmod>2018-11-28T06:20:32.792Z</lastmod>
@@ -89,13 +103,6 @@
     <loc>https://jerry80409.github.io/2018/11/28/keep-changelog/</loc>
     
     <lastmod>2018-11-28T06:15:56.059Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2018/11/28/owner-boilerplate/</loc>
-    
-    <lastmod>2018-11-28T05:28:06.851Z</lastmod>
     
   </url>
   
