@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Spring-data JPA 搭配 Optional 的使用">
+        <meta property="og:title" content="codesignal-almost-increasing-sequence">
     
 
     <!--Open Graph Description-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Spring-data JPA 搭配 Optional 的使用 - PAWS</title>
+    <title>codesignal-almost-increasing-sequence - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -176,13 +176,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Spring-data JPA 搭配 Optional 的使用</h1>
+                    <h1>codesignal-almost-increasing-sequence</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2018-12-24
+                            2018-12-26
                         
                     </span>
                 </div>
@@ -203,7 +203,7 @@
                         
 
 
-<a href="/tags/java/">#java</a> <a href="/tags/spring-data/">#spring-data</a>
+<a href="/tags/codesignal/">#codesignal</a>
 
 
                     
@@ -212,7 +212,7 @@
                     
                         
 
-<a href="/categories/java/">java</a>
+<a href="/categories/codesignal/">codesignal</a>
 
                     
                 </div>
@@ -223,22 +223,12 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="Optional-Class"><a href="#Optional-Class" class="headerlink" title="Optional Class"></a>Optional Class</h3><p>這是 java8 才有的 class, 一樣是用容器的概念 (container) 來封裝一個 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/doc-files/ValueBased.html" target="_blank" rel="noopener">value-base</a> 的 class, 無法直接讓你取得 value 的狀態, 而是需要透過 <code>.get()</code> 的方式取得, 或是透過 <code>.isPresent()</code> 來檢查是否 non-null。在 JPA select 資料的時候超好用的。我自己覺得寫得很棒的一篇 <a href="http://blog.tonycube.com/2015/10/java-java8-4-optional.html" target="_blank" rel="noopener">Tony blog</a>。</p>
-<h3 id="Value-base-Class"><a href="#Value-base-Class" class="headerlink" title="Value-base Class"></a>Value-base Class</h3><p><code>java.util.Optional</code> 與 <code>java.time.LocalDateTime</code> 皆屬於 values-base class, 下面的特點用 <code>java.time.LocalDateTime</code> 就很好理解。</p>
-<ul>
-<li>具有 final 或 immutable 的特質。</li>
-<li>已有 <code>equals()</code>, <code>hashCode()</code>, <code>toString()</code> 的方法, 這些狀態來自於 class instance 本身, 而不是從其他 variable 計算得來</li>
-<li>make no use of identity-sensitive operations such as reference equality (==) between instances, identity hash code of instances, or synchronization on an instances’s intrinsic lock; (這句後面 identity hash code 跟 synchronization 的情境不是很理解)</li>
-<li>應該使用 <code>equals()</code>, 而不是 <code>==</code>,</li>
-<li>沒有 constructors 方法可以被建構, 而是透過 Factory 方法實例化, </li>
-<li>當 <code>equals()</code> 發生時, 兩個 instance 是可以互換的, 且不影響後續的運算。</li>
-</ul>
-<p>簡單來說像這樣<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_equals</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LocalDateTime date = LocalDateTime.parse(<span class="string">"2017-02-03T12:30:30"</span>);</span><br><span class="line">    LocalDateTime date1 = LocalDateTime.parse(<span class="string">"2017-02-03T12:30:30"</span>);</span><br><span class="line">    assertTrue(date1.equals(date));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_hashcode_equals</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LocalDateTime date = LocalDateTime.parse(<span class="string">"2017-02-03T12:30:30"</span>);</span><br><span class="line">    LocalDateTime date1 = LocalDateTime.parse(<span class="string">"2017-02-03T12:30:30"</span>);</span><br><span class="line">    assertEquals(date.hashCode(), date1.hashCode());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_to_string</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LocalDateTime date = LocalDateTime.parse(<span class="string">"2017-02-03T12:30:30"</span>);</span><br><span class="line">    assertEquals(<span class="string">"2017-02-03T12:30:30"</span>, date.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="Jpa-and-Optional"><a href="#Jpa-and-Optional" class="headerlink" title="Jpa and Optional"></a>Jpa and Optional</h3><p>一般來說用 Jpa 做 CRUD 都會透過 JpaRepository<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserInfoRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">UserInfo</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">UserInfo <span class="title">findByName</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>這樣寫其實也沒什麼不合理, 只是在商業邏輯處理時, 要多一個 if 判斷, 判斷是否有查詢到 userInfo 的資料.<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">business</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    UserInfo user = userInfoRepository.findByName(<span class="string">"dumdum"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(user)) &#123;</span><br><span class="line">        <span class="comment">// throw exception</span></span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// do something</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>改為用 Optional 試試看<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserInfoRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">UserInfo</span>, <span class="title">String</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function">Optional&lt;Userinfo&gt; <span class="title">findByName</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">business</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Optional&lt;Userinfo&gt; userOpt = userInfoRepository.findByName(<span class="string">"dumdum"</span>);</span><br><span class="line">    UserInfo user = userOpt.orElseThrow(() -&gt;</span><br><span class="line">            <span class="keyword">new</span> Exception(<span class="string">"查無 userInfo(dumdum) 資訊."</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>找不到 user 還可以替換為預設 user, 這樣就不用處理 Exception, 當然並不是所有的情境都可以預設一個 instance.<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">business</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Optional&lt;Userinfo&gt; userOpt = userInfoRepository.findByName(<span class="string">"dumdum"</span>);</span><br><span class="line">    UserInfo user = userOpt.orElse(<span class="keyword">new</span> UserInfo(<span class="string">"Rocko"</span>)));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+                <h3 id="Pazzle"><a href="#Pazzle" class="headerlink" title="Pazzle"></a>Pazzle</h3><p>Given a sequence of integers as an array, determine whether it is possible to obtain a strictly increasing sequence by removing no more than one element from the array.</p>
+<p>Example:<br>For sequence = [1, 3, 2, 1], the output should be<br>almostIncreasingSequence(sequence) = false.</p>
+<p>For sequence = [1, 3, 2], the output should be<br>almostIncreasingSequence(sequence) = true</p>
+<p>Ref - <a href="https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG" target="_blank" rel="noopener">https://app.codesignal.com/arcade/intro/level-2/2mxbGwLzvkTCKAJMG</a></p>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> act = almostIncreasingSequence(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>&#125;);</span><br><span class="line">    assertFalse(act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> act = almostIncreasingSequence(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>&#125;);</span><br><span class="line">    assertTrue(act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> act = almostIncreasingSequence(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;);</span><br><span class="line">    assertTrue(act);</span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> act = almostIncreasingSequence(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">2</span>&#125;);</span><br><span class="line">    assertFalse(act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">boolean</span> act = almostIncreasingSequence(<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>, <span class="number">3</span>&#125;);</span><br><span class="line">    assertTrue(act);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>一開始的想法直覺是想到排序後做比較, diff &gt; 2 以上 return false, 但不太對,<br>像 <code>[10, 1, 2, 3, 4, 5]</code> 排序後, diff 絕對大於 2, 且也是屬於 almost incrasing seq,<br>最後回歸基本迴圈 foreach 比較<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">almostIncreasingSequence</span><span class="params">(<span class="keyword">int</span>[] seq)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> countNoSeq = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// compare with next element </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; seq.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (seq[i] &gt;= seq[i + <span class="number">1</span>]) &#123;</span><br><span class="line">            countNoSeq++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// compare with after next element, because removed an element</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; seq.length - <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (seq[i] &gt;= seq[i + <span class="number">2</span>]) &#123;</span><br><span class="line">            countNoSeq++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (countNoSeq &gt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
 
                 
