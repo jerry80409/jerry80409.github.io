@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.8.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Note for learning">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="jerry80409">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="leet-code-938-range-sum-of-bst">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Note for learning">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="PAWS">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>leet-code-938-range-sum-of-bst - PAWS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57149152-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MENU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jerry80409">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>leet-code-938-range-sum-of-bst</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-12-26
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/leetcode/">#leetcode</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/leetcode/">leetcode</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h3 id="Pazzle"><a href="#Pazzle" class="headerlink" title="Pazzle"></a>Pazzle</h3><p>Given the root node of a binary search tree, return the sum of values of all nodes with value between L and R (inclusive).</p>
+<p>The binary search tree is guaranteed to have unique values.</p>
+<p>Example:<br>Input: root = [10,5,15,3,7,null,18], L = 7, R = 15<br>Output: 32</p>
+<p>Input: root = [10,5,15,3,7,13,18,1,null,6], L = 6, R = 10<br>Output: 23</p>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><p>花了一點時間, 才看懂 L, R 的用意, 一直以為是左葉, 右葉, 我在想啥 XD.<br>若單純用陣列看, L(7), R(5) 就是天花板跟地板,<br>只要取出陣列中 <code>5 &lt;= n &lt;=7</code> 的元素就好了,<br>但題目限定要用 <code>TreeNode</code>, 一樣先搞定 test 再解題,<br>先用測試把問題簡單化…</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * input: root = [10,5,15,3,7,null,18], L = 7, R = 15</span></span><br><span class="line"><span class="comment"> * expect: 23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// leafs</span></span><br><span class="line">    RangeSumBst.TreeNode node3 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">3</span>);</span><br><span class="line">    RangeSumBst.TreeNode node7 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">7</span>);</span><br><span class="line">    RangeSumBst.TreeNode node18 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">18</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// level_2</span></span><br><span class="line">    RangeSumBst.TreeNode node5 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">5</span>, node3, node7);</span><br><span class="line">    RangeSumBst.TreeNode node15 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">15</span>, <span class="keyword">null</span>, node18);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// level_1</span></span><br><span class="line">    RangeSumBst.TreeNode root = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">10</span>, node5, node15);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">int</span> act = bst.rangeSumBST(root, l, r);</span><br><span class="line"></span><br><span class="line">    assertEquals(<span class="number">32</span>, act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * input: root = [5, 3, 7], L = 7, R = 15</span></span><br><span class="line"><span class="comment"> * expect: 23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// leafs</span></span><br><span class="line">    RangeSumBst.TreeNode node3 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">3</span>);</span><br><span class="line">    RangeSumBst.TreeNode node7 = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">7</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// level_1</span></span><br><span class="line">    RangeSumBst.TreeNode root = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">5</span>, node3, node7);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">int</span> act = bst.rangeSumBST(root, l, r);</span><br><span class="line"></span><br><span class="line">    assertEquals(<span class="number">7</span>, act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * input: root = [3, null, null], L = 7, R = 15</span></span><br><span class="line"><span class="comment"> * expect: 23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// level_1</span></span><br><span class="line">    RangeSumBst.TreeNode root = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">3</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">int</span> act = bst.rangeSumBST(root, l, r);</span><br><span class="line"></span><br><span class="line">    assertEquals(<span class="number">0</span>, act);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * input: root = [7, null, null], L = 7, R = 15</span></span><br><span class="line"><span class="comment"> * expect: 23</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_case_4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// level_1</span></span><br><span class="line">    RangeSumBst.TreeNode root = <span class="keyword">new</span> RangeSumBst.TreeNode(<span class="number">7</span>, <span class="keyword">null</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">7</span>;</span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">15</span>;</span><br><span class="line">    <span class="keyword">int</span> act = bst.rangeSumBST(root, l, r);</span><br><span class="line"></span><br><span class="line">    assertEquals(<span class="number">7</span>, act);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>解題的思路大概就是 binary-tree 走訪, node 大於 L 小於 R 就加總,<br>binary-tree 特性是, left tree 任何 node 遠永小於 root, right tree 任何 node 永遠大於 root;<br>這邊寫得比較清楚, 有複習有保庇 - <a href="http://www.csie.ntnu.edu.tw/~u91029/BinaryTree.html" target="_blank" rel="noopener">http://www.csie.ntnu.edu.tw/~u91029/BinaryTree.html</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">rangeSumBST</span><span class="params">(TreeNode root, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Objects.isNull(root)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root.val &lt; l) &#123;</span><br><span class="line">        <span class="keyword">return</span> rangeSumBST(root.right, l, r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root.val &gt; r) &#123;</span><br><span class="line">        <span class="keyword">return</span> rangeSumBST(root.left, l, r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> root.val + rangeSumBST(root.left, l, r) + rangeSumBST(root.right, l, r);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jerry80409" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 jerry80409<br></p>
+                <p class="copyright text-muted">
+                    Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
+                    | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
+                    | Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'https-jerry80409-github-io';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
