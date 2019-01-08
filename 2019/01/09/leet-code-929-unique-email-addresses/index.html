@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Java split empty strings">
+        <meta property="og:title" content="leet-code-929-unique-email-addresses">
     
 
     <!--Open Graph Description-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>Java split empty strings - PAWS</title>
+    <title>leet-code-929-unique-email-addresses - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -176,13 +176,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Java split empty strings</h1>
+                    <h1>leet-code-929-unique-email-addresses</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2018-12-24
+                            2019-01-09
                         
                     </span>
                 </div>
@@ -203,7 +203,7 @@
                         
 
 
-<a href="/tags/java/">#java</a>
+<a href="/tags/leetcode/">#leetcode</a>
 
 
                     
@@ -212,7 +212,7 @@
                     
                         
 
-<a href="/categories/java/">java</a>
+<a href="/categories/misc/">misc</a>
 
                     
                 </div>
@@ -223,14 +223,17 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><p>在 code review 的時候發現一個有趣的狀況, 預期 <code>.split(&quot;,&quot;)</code> 處理完結果應該是 5, 然而實際上卻是 3<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str = <span class="string">"a,b,c,,"</span>;</span><br><span class="line">String[] ary = str.split(<span class="string">","</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result 3</span></span><br><span class="line">System.out.println(ary.length);</span><br></pre></td></tr></table></figure></p>
-<h3 id="改用-split-regex-limit"><a href="#改用-split-regex-limit" class="headerlink" title="改用 split(regex, limit)"></a>改用 split(regex, limit)</h3><ul>
-<li>如果 limit &gt; 0, 最終處理的 array 長度不會大於 limit, regex express 匹配的次數最多為 n - 1 次,</li>
-<li>如果 limit &lt; 0, regex express 會盡可能的處理匹配, 包含對 空字串 匹配的問題,</li>
-<li>如果 limit = 0, regex express 會儘可能地處理匹配, 但會放棄處理 空字串 匹配的問題。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, <span class="number">2</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and:foo"</span>, act[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, <span class="number">5</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, -<span class="number">2</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, -<span class="number">1</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 等同於 .split(regex)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">"o"</span>, <span class="number">0</span>);</span><br><span class="line">    assertEquals(<span class="string">"b"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">""</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">":and:f"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>在使用 <code>.split(regex)</code> 盡量改為 <code>.split(regex, limit)</code> 去避免空字串切分的問題。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str = <span class="string">"a,b,c,,"</span>;</span><br><span class="line">String[] ary = str.split(<span class="string">","</span>, -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result 5</span></span><br><span class="line">System.out.println(ary.length);</span><br></pre></td></tr></table></figure></p>
+                <h3 id="Puzzle"><a href="#Puzzle" class="headerlink" title="Puzzle"></a>Puzzle</h3><p><a href="https://leetcode.com/problems/unique-email-addresses/" target="_blank" rel="noopener">https://leetcode.com/problems/unique-email-addresses/</a><br>輸入一組 emails array, 請依據 host 跟 domain 做 unique 處理,</p>
+<ol>
+<li>host 名稱一樣, domain 名稱不一樣, 視為不同的 email</li>
+<li>host 若有包含 “.”, 則可以視為 “”</li>
+<li>host 若有包含 “+”, 則忽略後續的字串</li>
+</ol>
+<p>在解這題的時候, 我的想法其實很簡單, 就只是單純的資料粒度判斷,<br><code>domain</code> 的粒度最粗, 優先分類處理, <code>host</code> 其次</p>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String[] emails = <span class="keyword">new</span> String[]&#123;</span><br><span class="line">        <span class="string">"test.email+alex@leetcode.com"</span>,</span><br><span class="line">        <span class="string">"test.e.mail+bob.cathy@leetcode.com"</span>,</span><br><span class="line">        <span class="string">"testemail+david@lee.tcode.com"</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> act = uniqueEmail.numUniqueEmails(emails);</span><br><span class="line">    assertEquals(<span class="number">2</span>, act);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>很直覺的用 lambda 就解出來了, 但效能很差, 約 200ms XD</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numUniqueEmails</span><span class="params">(String[] emails)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) Arrays.stream(emails)</span><br><span class="line">        .collect(Collectors.groupingBy(e -&gt; e.split(<span class="string">"@"</span>)[<span class="number">1</span>]))</span><br><span class="line">        .entrySet()</span><br><span class="line">        .stream()</span><br><span class="line">        .map(groupMails -&gt; groupMails.getValue().stream()</span><br><span class="line">            .map(local -&gt; local.replace(<span class="string">"."</span>, <span class="string">""</span>))</span><br><span class="line">            .map(local -&gt; local.split(<span class="string">"\\+"</span>)[<span class="number">0</span>])</span><br><span class="line">            .distinct()</span><br><span class="line">            .count())</span><br><span class="line">        .count();</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>要好一點的, 還是用 foreach 吧, 約 63ms XD<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">numUniqueEmails</span><span class="params">(String[] emails)</span> </span>&#123;</span><br><span class="line">    Set&lt;String&gt; result = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (String email: emails) &#123;</span><br><span class="line">        String[] split = email.split(<span class="string">"@"</span>);</span><br><span class="line">        String host = split[<span class="number">0</span>];</span><br><span class="line">        String domain = split[<span class="number">1</span>];</span><br><span class="line">        String newHost = host.replace(<span class="string">"."</span>, <span class="string">""</span>).split(<span class="string">"\\+"</span>)[<span class="number">0</span>];</span><br><span class="line">        result.add(domain + <span class="string">"@"</span> + newHost);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
 
                 
