@@ -23,7 +23,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="google-trends-hacking">
+        <meta property="og:title" content="leet-code-535-encode-and-eecode-tinyurl">
     
 
     <!--Open Graph Description-->
@@ -55,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>google-trends-hacking - PAWS</title>
+    <title>leet-code-535-encode-and-eecode-tinyurl - PAWS</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -176,13 +176,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>google-trends-hacking</h1>
+                    <h1>leet-code-535-encode-and-eecode-tinyurl</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2018-11-26
+                            2019-01-09
                         
                     </span>
                 </div>
@@ -203,7 +203,7 @@
                         
 
 
-<a href="/tags/misc/">#misc</a>
+<a href="/tags/leetcode/">#leetcode</a>
 
 
                     
@@ -212,7 +212,7 @@
                     
                         
 
-<a href="/categories/hacking/">hacking</a>
+<a href="/categories/misc/">misc</a>
 
                     
                 </div>
@@ -223,38 +223,26 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="給我資料"><a href="#給我資料" class="headerlink" title="給我資料"></a>給我資料</h3><p>最近試著在蒐集一些看起來有點用途的資料, Google Trends 看起來是一個 “滿有價值” 的資料平台, 是 Google 蒐集的全球趨勢資料, 包含最近流行的關鍵字, 關鍵字與關鍵字的比較, etc., 但 Google 並沒有提供相關的 API 介面, 所以要取得資料的做法我第一個想到的是 Crawler, 於是順手找了一下大神的開源專案, 左看右看上看下看, 都覺得太複雜不順手XD。</p>
-<h3 id="Hack-Fun"><a href="#Hack-Fun" class="headerlink" title="Hack Fun"></a>Hack Fun</h3><p>剛好讀到一篇很有趣的文章 <a href="http://techslides.com/hacking-the-google-trends-api" target="_blank" rel="noopener">hacking the google trends api</a>, 文章內容提到了幾個有趣的 resource</p>
-<p>這是 2014 年的 Resource</p>
+                <h3 id="Puzzle"><a href="#Puzzle" class="headerlink" title="Puzzle"></a>Puzzle</h3><p><a href="https://leetcode.com/problems/encode-and-decode-tinyurl/" target="_blank" rel="noopener">https://leetcode.com/problems/encode-and-decode-tinyurl/</a><br>題目本身就是要實作短網址, 我覺得這題真的是殺手級的題目, 很多地方可以討論, 且在實作的過程中還不能使用任何的 Digest 技術, Base64, MD5, SHA, 通通都不能用</p>
+<p>Example:<br>Inpute: <a href="https://leetcode.com/problems/design-tinyurl" target="_blank" rel="noopener">https://leetcode.com/problems/design-tinyurl</a><br>tinyurl: <a href="http://tinyurl.com/4e9iAk" target="_blank" rel="noopener">http://tinyurl.com/4e9iAk</a> </p>
+<h3 id="Thought"><a href="#Thought" class="headerlink" title="Thought"></a>Thought</h3><p>先看一下 url 結構吧<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:// host / path1 / path2 ? key1=value2&amp;key2=value2 #anchor</span><br></pre></td></tr></table></figure></p>
+<p>然後 url 允許的字符<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">* a ~ z (26)</span><br><span class="line">* A ~ Z (26)</span><br><span class="line">* 0 ~ 9 (10)</span><br><span class="line">* !*&apos;();:@&amp;=+$,/?#[] (保留字, 會被 urlencode 成 % 開頭 + Hex, e.g. %20 表示空白)</span><br></pre></td></tr></table></figure></p>
 <ul>
-<li><a href="https://trends.google.com/trends/hottrends/visualize?pn=p1" target="_blank" rel="noopener">Google Trends? Visualization</a></li>
-<li><a href="https://trends.google.com/trends/topcharts" target="_blank" rel="noopener">Google Trends? Top-Charts</a></li>
-<li><a href="https://trends.google.com/trends/hottrends/atom/feed?pn=p1" target="_blank" rel="noopener">Hot Trends Rss Feed</a></li>
+<li>解法大概是需要 <code>Map</code> 的結構做 key, value 的查詢, key 存 hash, value 存 original url</li>
+<li>重點就是 key 的設計, 要盡量減少碰撞, 如果是用 <code>Redis</code>, <code>MySQL</code> 之類來設計的話, 可以想一下如何在大量的資料下做 Select </li>
+<li>還有試了 Digest, Base64, MD5, SHA 都不能用, XD</li>
+<li>粒度最大的是 host, 如果是資料庫的話, 可以考慮把這個欄位拿來做 Partition</li>
+<li>path 跟 query 粒度比較細, 只要想好這邊的 digest 就可以有效減少碰撞, 但我一點概念都沒有喔 </li>
 </ul>
-<p>當然還有今年（2018）最重要的世足趨勢</p>
-<ul>
-<li><a href="https://googletrends.github.io/world-cup-2018/?lang=en&amp;view=GB-ENG" target="_blank" rel="noopener">World-Cup-2018</a></li>
-<li><a href="https://www.google.com/intl/es419/insidesearch/features/search/knowledge.html" target="_blank" rel="noopener">Knowledge Graph</a></li>
-</ul>
-<h3 id="Chrome-DevTools"><a href="#Chrome-DevTools" class="headerlink" title="Chrome DevTools"></a>Chrome DevTools</h3><p>2014 年那篇 hacking 有點過期了, 所以我稍微調整了一下做法,<br>以 Google-Trends 每日搜尋趨勢 為例, 先取得 uri。</p>
-<ul>
-<li>打開 Chrome DevTools</li>
-<li>點選 Network Tab</li>
-<li>勾選 Preserve log</li>
-<li>重整頁面</li>
-<li>觀察這個頁面的 Requests 行為</li>
-<li>找到一個像這樣的請求, 複製他的 curl 語法</li>
-</ul>
-<p><img src="/img/google-trends-hacking/google-trends-hacking-with-chrome.png" alt="hacking-with-chrome-devtools"></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl <span class="string">'https://trends.google.com/trends/api/dailytrends?hl=zh-TW&amp;tz=-480&amp;geo=TW&amp;ns=15'</span> </span><br><span class="line">-H <span class="string">'dnt: 1'</span> </span><br><span class="line">-H <span class="string">'accept-encoding: gzip, deflate, br'</span> </span><br><span class="line">-H <span class="string">'accept-language: zh-TW,zh;q=0.9,en-US;q=0.8,en;q=0.7'</span> </span><br><span class="line">-H <span class="string">'user-agent: Mozilla/5.0 ...'</span> </span><br><span class="line">-H <span class="string">'accept: application/json, text/plain, */*'</span> </span><br><span class="line">-H <span class="string">'referer: https://trends.google.com/trends/trendingsearches/daily?geo=TW'</span> </span><br><span class="line">-H <span class="string">'authority: trends.google.com'</span> </span><br><span class="line">-H <span class="string">'cookie: ...'</span> </span><br><span class="line">-H <span class="string">'x-client-data: ...'</span> </span><br><span class="line">--compressed</span><br></pre></td></tr></table></figure>
-<h3 id="對-query-的猜測"><a href="#對-query-的猜測" class="headerlink" title="對 query 的猜測"></a>對 query 的猜測</h3><p>hl: Location 或是 Language<br>tz: timezone<br>ns: ??<br>可以得到, 像這樣的資料<br><img src="/img/google-trends-hacking/google-trends-hacking-json.png" alt="hacking-result-json"></p>
-<h3 id="That’s-Rock"><a href="#That’s-Rock" class="headerlink" title="That’s Rock"></a>That’s Rock</h3><p>簡單地用 Retrofit2 + Okhttp3 做個接口(沒更新了)<br><a href="https://github.com/jerry80409/open-data-demo" target="_blank" rel="noopener">https://github.com/jerry80409/open-data-demo</a></p>
-<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p>沒實際使用過這些 Reference, 但可從一些文件去推斷 google trends 的 uri</p>
-<ul>
-<li><a href="https://www.npmjs.com/package/google-trends-api" target="_blank" rel="noopener">npm-google-trends-api</a></li>
-<li><a href="https://github.com/GeneralMills/pytrends" target="_blank" rel="noopener">pytrends</a></li>
-<li><a href="http://myweb.fcu.edu.tw/~mhsung/Research/InformationSystem/JSON/JSON_24.htm" target="_blank" rel="noopener">fcu.edu.tw</a></li>
-</ul>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h4 id="直接用-java-HASH-code-其實我試了很多種方法"><a href="#直接用-java-HASH-code-其實我試了很多種方法" class="headerlink" title="直接用 java HASH code, (其實我試了很多種方法)"></a>直接用 java HASH code, (其實我試了很多種方法)</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">EncodeAndDecodeTinyUrl</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String baseUrl = <span class="string">"http://tinyurl.com/"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Map&lt;String, String&gt; HASH_MAP = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Encodes a URL to a shortened URL.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> longUrl</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">encode</span><span class="params">(String longUrl)</span> </span>&#123;</span><br><span class="line">        HASH_MAP.put(String.format(<span class="string">"%h"</span>, longUrl), longUrl);</span><br><span class="line">        <span class="keyword">return</span> baseUrl + String.format(<span class="string">"%h"</span>, longUrl);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Decodes a shortened URL to its original URL.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> shortUrl</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">decode</span><span class="params">(String shortUrl)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> HASH_MAP.get(shortUrl.replace(baseUrl, <span class="string">""</span>));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Base62-Redis-解法"><a href="#Base62-Redis-解法" class="headerlink" title="Base62 + Redis 解法"></a><a href="https://hackernoon.com/url-shortening-service-in-java-spring-boot-and-redis-d2a0f8848a1d?fbclid=IwAR3kklW3xtlHS4FcJ6MZDkvtoZu-ord2KXKN-TUQWdPAJ4L0vED7sJweegU" target="_blank" rel="noopener">Base62 + Redis 解法</a></h4><p>這篇文章裡面的解法, 是透過 Redis 做類似 Map 的事情,</p>
+<ol>
+<li>先用 [id, original] 的方式建立字典</li>
+<li>再拿 <code>id / 62</code> 取得<strong>商數</strong>, <strong>餘數</strong> 去算出對應的 <strong>Base62</strong> 的 tinyUrl</li>
+<li>一樣透過上面的算法, 反推 id, 再從 Redis 取得 original url</li>
+</ol>
+<p>缺點就是會遇到 id 數量上限的瓶頸, 就會遇到要分表的情境,<br>我自己稍微想了一下, 我大概會把 host 資訊存到 main table, 雖然還是有機會遇到 id 上限的問題, 但會比較低一點,<br>然後 path 做 digest 存 secnod table, 後續的 query + anchor 做第二次 digest 存 third table.<br>這樣效能會比較差一點, 但碰撞機會應該會比較低 (還沒深入研究碰撞計算 XD)</p>
+<p>大概會是這樣的做法<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">output: http://tinyurl.com/host(id)/path(digest)/query+anchor(digest)</span><br><span class="line">Example: http://tinyurl.com/1/abcde/abcde</span><br></pre></td></tr></table></figure></p>
 
 
                 
