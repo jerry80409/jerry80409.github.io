@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jerry80409.github.io/"/>
-  <updated>2019-01-23T15:43:07.252Z</updated>
+  <updated>2019-01-23T16:31:06.020Z</updated>
   <id>https://jerry80409.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>facebook-oauth</title>
+    <link href="https://jerry80409.github.io/2019/01/23/facebook-oauth/"/>
+    <id>https://jerry80409.github.io/2019/01/23/facebook-oauth/</id>
+    <published>2019-01-23T15:50:56.000Z</published>
+    <updated>2019-01-23T16:31:06.020Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Facebook-OAuth-Login-Flow"><a href="#Facebook-OAuth-Login-Flow" class="headerlink" title="Facebook OAuth Login Flow"></a>Facebook OAuth Login Flow</h3><p><img src="/img/facebook-oauth/facebook-oauth.png" alt="facebook-oauth"><br>從圖片中, 簡單的可以歸納幾個步驟，授權細節會在後面提到。</p><ol><li>(前端) 產生 Login Button 給使用者。</li><li>(後端) 接收 <code>使用者</code> 的 Login Request, Redirect 給 Facebook。</li><li>Facebook 會彈出登入視窗給使用者, 徵求 <code>使用者</code> 授權。</li><li>使用者點選同意授權，會回傳 redirect_uri 跟 code 給 <code>後端</code>。</li><li>(後端) 接收使用者同意授權的 scopes, code 做驗證, 並且跟 Facebook 做 server side 驗證, facebook 會要求一個 callback endpoint。</li><li>(後端) 接收 Facebook OAuth Callback, 並儲存使用者的 access token, 做相關產品的應用, long-terms access token <code>90 days 要重新授權一次</code>。</li></ol><h3 id="第一步是申請-App-Login-功能"><a href="#第一步是申請-App-Login-功能" class="headerlink" title="第一步是申請 App, Login 功能"></a>第一步是申請 App, Login 功能</h3><p>在處理 Facebook Apis 許多設定, 都要在 Dashboard 做設定開通, 前期還不穩的時候有很多血淚, 就不多說了 (tears…<br>Dashboard 頁面, 主要是管理 app 要啟用的 apis, 可以觀察 apis 錯誤率, rate limit 狀態, security 設定, callback, hook 設定, etc. 最重要的是 facebook 審核, 審查你所申請的 “APP” 有沒有符合他們的規範, 或違反 Facebook 原則或標準, 如果 APP 還在開發階段, 這部分就沒差, 如果要上線基本資料就要填好, <a href="https://zh.wikipedia.org/wiki/Facebook" target="_blank" rel="noopener">2018 劍橋事件</a> 後審查變得比較嚴格, 請參考 <a href="https://developers.facebook.com/docs/apps/review/" target="_blank" rel="noopener">審查指南</a>。</p><p><img src="/img/facebook-oauth/fb-dash-board-login.png" alt="fb-app-dash-board"><br>下方的 OAuth 重新導向 URL 設定大概像這樣, 很簡單的 Server side 驗證 endpoint</p><h3 id="產生-URL-給使用者"><a href="#產生-URL-給使用者" class="headerlink" title="產生 URL 給使用者"></a>產生 URL 給使用者</h3><p>這一步的重點只是要產生 url, 要用前端產還是後端產都沒差, 簡單來說就是要產生下列這串 url, 當中的 <code>state</code> 很重要, 很重要, 很重要, 除了放入使用者的一些狀態, 最好還是做一些 hash 加密, 是避免 csrf 攻擊的基本防禦方法, 記得在 callback endpoint 驗證 hash 是不是自己公司簽出來的資訊.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https://www.facebook.com/v2.12/dialog/oauth?</span><br><span class="line">  client_id=&#123;app-id&#125;</span><br><span class="line">  &amp;redirect_uri=&#123;&quot;https://www.domain.com/login&quot;&#125;</span><br><span class="line">  &amp;state=&quot;this-is-hash-secret&quot;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;Facebook-OAuth-Login-Flow&quot;&gt;&lt;a href=&quot;#Facebook-OAuth-Login-Flow&quot; class=&quot;headerlink&quot; title=&quot;Facebook OAuth Login Flow&quot;&gt;&lt;/a&gt;Facebook OA
+      
+    
+    </summary>
+    
+      <category term="facebook" scheme="https://jerry80409.github.io/categories/facebook/"/>
+    
+    
+      <category term="facebook_apis" scheme="https://jerry80409.github.io/tags/facebook-apis/"/>
+    
+      <category term="oauth" scheme="https://jerry80409.github.io/tags/oauth/"/>
+    
+  </entry>
   
   <entry>
     <title>Dirty Paws</title>
@@ -244,31 +271,6 @@
     
     
       <category term="codesignal" scheme="https://jerry80409.github.io/tags/codesignal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java split empty strings</title>
-    <link href="https://jerry80409.github.io/2018/12/24/java-split-empty-strings/"/>
-    <id>https://jerry80409.github.io/2018/12/24/java-split-empty-strings/</id>
-    <published>2018-12-24T11:05:23.000Z</published>
-    <updated>2018-12-24T11:31:49.402Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Sample"><a href="#Sample" class="headerlink" title="Sample"></a>Sample</h3><p>在 code review 的時候發現一個有趣的狀況, 預期 <code>.split(&quot;,&quot;)</code> 處理完結果應該是 5, 然而實際上卻是 3<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str = <span class="string">"a,b,c,,"</span>;</span><br><span class="line">String[] ary = str.split(<span class="string">","</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result 3</span></span><br><span class="line">System.out.println(ary.length);</span><br></pre></td></tr></table></figure></p><h3 id="改用-split-regex-limit"><a href="#改用-split-regex-limit" class="headerlink" title="改用 split(regex, limit)"></a>改用 split(regex, limit)</h3><ul><li>如果 limit &gt; 0, 最終處理的 array 長度不會大於 limit, regex express 匹配的次數最多為 n - 1 次,</li><li>如果 limit &lt; 0, regex express 會盡可能的處理匹配, 包含對 空字串 匹配的問題,</li><li>如果 limit = 0, regex express 會儘可能地處理匹配, 但會放棄處理 空字串 匹配的問題。</li></ul><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, <span class="number">2</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and:foo"</span>, act[<span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, <span class="number">5</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_3</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, -<span class="number">2</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_4</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">":"</span>, -<span class="number">1</span>);</span><br><span class="line">    assertEquals(<span class="string">"boo"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">"and"</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">"foo"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 等同於 .split(regex)</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">assert_split_5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String example = <span class="string">"boo:and:foo"</span>;</span><br><span class="line">    String[] act = example.split(<span class="string">"o"</span>, <span class="number">0</span>);</span><br><span class="line">    assertEquals(<span class="string">"b"</span>, act[<span class="number">0</span>]);</span><br><span class="line">    assertEquals(<span class="string">""</span>, act[<span class="number">1</span>]);</span><br><span class="line">    assertEquals(<span class="string">":and:f"</span>, act[<span class="number">2</span>]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>在使用 <code>.split(regex)</code> 盡量改為 <code>.split(regex, limit)</code> 去避免空字串切分的問題。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str = <span class="string">"a,b,c,,"</span>;</span><br><span class="line">String[] ary = str.split(<span class="string">","</span>, -<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// result 5</span></span><br><span class="line">System.out.println(ary.length);</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Sample&quot;&gt;&lt;a href=&quot;#Sample&quot; class=&quot;headerlink&quot; title=&quot;Sample&quot;&gt;&lt;/a&gt;Sample&lt;/h3&gt;&lt;p&gt;在 code review 的時候發現一個有趣的狀況, 預期 &lt;code&gt;.split(&amp;quot;,&amp;qu
-      
-    
-    </summary>
-    
-      <category term="java" scheme="https://jerry80409.github.io/categories/java/"/>
-    
-    
-      <category term="java" scheme="https://jerry80409.github.io/tags/java/"/>
     
   </entry>
   
