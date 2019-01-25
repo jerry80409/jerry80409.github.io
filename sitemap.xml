@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2019/01/24/spring-boot-jpa-hibernate/</loc>
+    
+    <lastmod>2019-01-25T17:52:55.992Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/01/23/facebook-oauth/</loc>
     
     <lastmod>2019-01-23T17:04:48.961Z</lastmod>
