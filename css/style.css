@@ -32,16 +32,25 @@ h6,
   font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 body {
-  font-size: 18px;
+  font-size: 16px;
   color: #404040;
 }
 p {
-  line-height: 1.8;
-  margin: 30px 0;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: distribute;
 }
 p a,
 li a {
   text-decoration: underline;
+}
+ul li {
+  line-height: 1.6;
+  margin-bottom: 5px;
+}
+ol li {
+  line-height: 1.6;
+  margin-bottom: 5px;
 }
 h1,
 h2,
@@ -49,7 +58,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 800;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 a {
   color: #404040;
@@ -275,7 +286,7 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 .section-heading {
