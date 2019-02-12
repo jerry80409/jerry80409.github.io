@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2019/02/12/calculate-mysql-database-size/</loc>
+    
+    <lastmod>2019-02-12T05:39:48.038Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2019/02/01/java-equals-and-hashcode/</loc>
+    
+    <lastmod>2019-02-01T13:12:15.289Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/01/29/the-alchemist/</loc>
     
-    <lastmod>2019-01-29T08:08:05.434Z</lastmod>
+    <lastmod>2019-01-29T15:57:09.312Z</lastmod>
     
   </url>
   
@@ -79,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
+    <loc>https://jerry80409.github.io/2018/12/12/leet-code-001-two-sum/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/12/leet-code-001-two-sum/</loc>
+    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
