@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2019/02/19/jpa-transactional-rollback/</loc>
+    
+    <lastmod>2019-02-19T05:50:24.526Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2019/01/24/spring-boot-jpa-hibernate/</loc>
+    
+    <lastmod>2019-02-19T04:22:50.610Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2018/12/24/spring-data-jpa-and-optional/</loc>
+    
+    <lastmod>2019-02-19T04:22:50.601Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/02/12/calculate-mysql-database-size/</loc>
     
-    <lastmod>2019-02-12T05:39:48.038Z</lastmod>
+    <lastmod>2019-02-12T07:02:56.685Z</lastmod>
     
   </url>
   
@@ -19,13 +40,6 @@
     <loc>https://jerry80409.github.io/2019/01/29/the-alchemist/</loc>
     
     <lastmod>2019-01-29T15:57:09.312Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2019/01/24/spring-boot-jpa-hibernate/</loc>
-    
-    <lastmod>2019-01-25T17:52:55.992Z</lastmod>
     
   </url>
   
@@ -100,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
+    <loc>https://jerry80409.github.io/2018/11/27/leet-code-575-distribute-candies/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/11/27/leet-code-575-distribute-candies/</loc>
+    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
@@ -131,13 +145,6 @@
     <loc>https://jerry80409.github.io/2018/12/24/java-split-empty-strings/</loc>
     
     <lastmod>2018-12-24T11:31:49.402Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2018/12/24/spring-data-jpa-and-optional/</loc>
-    
-    <lastmod>2018-12-24T11:06:52.045Z</lastmod>
     
   </url>
   
