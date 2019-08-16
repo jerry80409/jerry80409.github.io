@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2019/08/16/oracle-impdp-and-expdp/</loc>
+    
+    <lastmod>2019-08-16T11:02:21.702Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/08/02/clean-and-pre-process-csv/</loc>
     
     <lastmod>2019-08-03T06:24:55.864Z</lastmod>
