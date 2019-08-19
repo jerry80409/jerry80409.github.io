@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2019/08/19/ora2pg-setup/</loc>
+    
+    <lastmod>2019-08-19T11:47:30.909Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2019/08/16/oracle-impdp-and-expdp/</loc>
+    
+    <lastmod>2019-08-19T10:21:42.311Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/08/19/ssh-login-tips/</loc>
     
-    <lastmod>2019-08-19T03:25:27.523Z</lastmod>
+    <lastmod>2019-08-19T03:34:02.545Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://jerry80409.github.io/2018/12/28/dialogflow-with-actions-on-google/</loc>
     
     <lastmod>2019-08-19T03:07:13.092Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2019/08/16/oracle-impdp-and-expdp/</loc>
-    
-    <lastmod>2019-08-16T11:02:21.702Z</lastmod>
     
   </url>
   
