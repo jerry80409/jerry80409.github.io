@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jerry80409.github.io/2020/01/13/run-oracle-11g-on-docker/</loc>
+    
+    <lastmod>2020-01-26T07:54:50.089Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2019/08/19/ora2pg-setup/</loc>
+    
+    <lastmod>2019-10-17T09:26:06.216Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jerry80409.github.io/2019/02/01/java-equals-and-hashcode/</loc>
+    
+    <lastmod>2019-10-17T02:30:27.992Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jerry80409.github.io/2019/09/05/plsql-note/</loc>
     
-    <lastmod>2019-09-17T02:56:14.063Z</lastmod>
+    <lastmod>2019-09-17T02:58:29.020Z</lastmod>
     
   </url>
   
@@ -19,13 +40,6 @@
     <loc>https://jerry80409.github.io/2019/08/16/oracle-impdp-and-expdp/</loc>
     
     <lastmod>2019-08-22T04:39:50.487Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jerry80409.github.io/2019/08/19/ora2pg-setup/</loc>
-    
-    <lastmod>2019-08-19T13:28:28.832Z</lastmod>
     
   </url>
   
@@ -93,13 +107,6 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2019/02/01/java-equals-and-hashcode/</loc>
-    
-    <lastmod>2019-02-01T13:12:15.289Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://jerry80409.github.io/2019/01/29/the-alchemist/</loc>
     
     <lastmod>2019-01-29T15:57:09.312Z</lastmod>
@@ -156,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/12/leet-code-001-two-sum/</loc>
+    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jerry80409.github.io/2018/12/12/leet-code-021-merge-two-sorted-lists/</loc>
+    <loc>https://jerry80409.github.io/2018/12/12/leet-code-001-two-sum/</loc>
     
     <lastmod>2018-12-27T12:31:16.549Z</lastmod>
     
