@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Note for learning">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="jerry80409">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="gradle-101">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Note for learning">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="PAWS">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>gradle-101 - PAWS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57149152-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MENU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jerry80409">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>gradle-101</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-06
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/gradle/">#gradle</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/dev-ops/">dev_ops</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>大部分的 Java 專案通常都會配置 <a href="https://maven.apache.org/" target="_blank" rel="noopener">maven</a> 或是 <a href="https://gradle.org/" target="_blank" rel="noopener">gradle</a> 來做專案管理, 這兩個工具的角色就類似 PHP 的 <a href="https://getcomposer.org/" target="_blank" rel="noopener">composer</a> 或是 nodejs 的 <a href="https://www.npmjs.com/" target="_blank" rel="noopener">npm</a>, 可以用來協助建置專案, 套件依賴管理, 建立 task 模組做 deploy 或 testing。</p>
+<p>選用 maven 或是 gradle 端看團隊成員的狀況, 如果有熟悉 Kotlin 或是 Groovy 選用 gradle 會比較好一點, 但 2 者都不會太難入門 (我自己覺得啦 XD), maven 雖然比較老派, 但一些套件比較穩定。</p>
+<hr>
+<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># install</span></span><br><span class="line">brew install gradle</span><br><span class="line"></span><br><span class="line"><span class="comment"># check version</span></span><br><span class="line">gradle -v</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Initial-gradle-project"><a href="#Initial-gradle-project" class="headerlink" title="Initial gradle project"></a>Initial gradle project</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立 project 目錄</span></span><br><span class="line">mkdir project-name</span><br><span class="line"></span><br><span class="line"><span class="comment"># 進入 project 目錄, 並且初始化 gradle 專案</span></span><br><span class="line"><span class="built_in">cd</span> project-name &amp;&amp; gradle init</span><br><span class="line"></span><br><span class="line"><span class="comment"># list project 底下的檔案與目錄 (之後在細說)</span></span><br><span class="line">ls </span><br><span class="line">build.gradle  gradle  gradlew  gradlew.bat  settings.gradle</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>build.gradle</code> 專案的主要維運腳本。</li>
+<li><code>gradle</code> 包裝 gradle 程式的主體, 裡面有 <a href="https://docs.gradle.org/4.10.3/userguide/gradle_wrapper.html" target="_blank" rel="noopener">gradle-wrapper.jar</a>, 所以 gradle 運行時需要 JVM 的環境。</li>
+<li><code>gradlew</code> 是一個以直接在 UNIX 環境執行的執行檔, 會比較建議執行 gradle 相關操作時使用 <code>gradlew</code>, 不用在 target 或是 CI Runner 再安裝 gradle CLI。</li>
+<li><code>gradlew.bat</code> 是一個可以直接在 WINDOWS 環境執行的執行檔。</li>
+<li><code>settings.gradle</code> 是用來做此專案的 gradle 運行時的 configuration, 比如說: <strong><a href="https://docs.gradle.org/current/userguide/multi_project_builds.html" target="_blank" rel="noopener">Multi-Porjects</a></strong> 的架構, 或是添加 <code>org.gradle.daemon=true</code> 在背景運行之類的設定。</li>
+</ul>
+<hr>
+<h2 id="Basic-Task"><a href="#Basic-Task" class="headerlink" title="Basic Task"></a>Basic Task</h2><h3 id="setting-gradle"><a href="#setting-gradle" class="headerlink" title="setting.gradle"></a>setting.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 會在 Initialization phase 被執行</span></span><br><span class="line">println <span class="string">'This is executed during the initialization phase.'</span></span><br><span class="line"></span><br><span class="line">rootProject.name = <span class="string">'gradle-multi-module'</span></span><br></pre></td></tr></table></figure>
+<h3 id="build-gradle"><a href="#build-gradle" class="headerlink" title="build.gradle"></a>build.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">plugins &#123;</span><br><span class="line">    <span class="comment">// 需要 java plugin</span></span><br><span class="line">    id <span class="string">'java'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task hello &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println <span class="string">'Executed doFirst block!'</span></span><br><span class="line">    &#125;</span><br><span class="line">    doLast &#123;</span><br><span class="line">        println <span class="string">'Executed doLast block!'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 這行會在 Configure project 階段執行</span></span><br><span class="line">    println <span class="string">'Hello World!'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Execute-task"><a href="#Execute-task" class="headerlink" title="Execute task"></a>Execute task</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./gradlew hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># 也可以攜帶 -q 參數, 代表 quiet 模式, 會減少一些不必要的 stdout 輸出(比如說: project configure)</span></span><br><span class="line"><span class="comment"># ./gradlew -q hello</span></span><br><span class="line"></span><br><span class="line">&gt; Configure project :</span><br><span class="line">Hello World!</span><br><span class="line"></span><br><span class="line">&gt; Task :hello</span><br><span class="line">Executed doFirst block!</span><br><span class="line">Executed doLast block!</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Build-phases"><a href="#Build-phases" class="headerlink" title="Build phases"></a>Build phases</h2><p>參考 <a href="https://docs.gradle.org/current/userguide/build_lifecycle.html" target="_blank" rel="noopener">build lifecycle</a></p>
+<h3 id="Initialization"><a href="#Initialization" class="headerlink" title="Initialization"></a>Initialization</h3><p>依據 <code>settings.gradle</code> 決定是 single / multi-projects 再去建立 Gradle 的 project instance.</p>
+<blockquote>
+<p>Gradle supports single and multi-project builds. During the initialization phase, Gradle determines which projects are going to take part in the build, and creates a Project instance for each of these projects.</p>
+</blockquote>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h3><p>官方說明很簡略, 就只是說在此階段會讀取整個 <code>build.gradle</code> 再去決定要 executed 的部分。</p>
+<blockquote>
+<p>During this phase the project objects are configured. The build scripts of all projects which are part of the build are executed.</p>
+</blockquote>
+<h3 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h3><p>gradle 決定 task 的 subset(<strong>doFirst</strong>, <strong>doFirst</strong>), 經過 configuration 階段後再去執行。</p>
+<blockquote>
+<p>Gradle determines the subset of the tasks, created and configured during the configuration phase, to be executed. The subset is determined by the task name arguments passed to the gradle command and the current directory. Gradle then executes each of the selected tasks.</p>
+</blockquote>
+<p>所以在上面的執行範例中, 看到 <code>Hello World</code> 會在 <code>Configure project</code> 階段就被執行, 所以在寫 task 的時候 <strong>要注意這個 task 要在哪個 phases 被執行</strong>。</p>
+<hr>
+<h2 id="Task-with-groovy-DSL"><a href="#Task-with-groovy-DSL" class="headerlink" title="Task with groovy DSL"></a>Task with groovy DSL</h2><h3 id="build-gradle-1"><a href="#build-gradle-1" class="headerlink" title="build.gradle"></a>build.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task count &#123;</span><br><span class="line">    doLast &#123;</span><br><span class="line">        <span class="number">4.</span>times &#123;</span><br><span class="line">            println <span class="string">"$it"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Execute-task-1"><a href="#Execute-task-1" class="headerlink" title="Execute task"></a>Execute task</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./gradlew count   </span><br><span class="line">This is executed during the initialization phase.</span><br><span class="line"></span><br><span class="line">&gt; Configure project :</span><br><span class="line">Hello World!</span><br><span class="line"></span><br><span class="line">&gt; Task :count</span><br><span class="line">0</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Task-dependencies"><a href="#Task-dependencies" class="headerlink" title="Task dependencies"></a>Task dependencies</h2><h3 id="build-gradle-2"><a href="#build-gradle-2" class="headerlink" title="build.gradle"></a>build.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// demo task</span></span><br><span class="line">task hello &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println <span class="string">'Executed doFirst block!'</span></span><br><span class="line">    &#125;</span><br><span class="line">    doLast &#123;</span><br><span class="line">        println <span class="string">'Executed doLast block!'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 這行會在 Configure project 階段執行</span></span><br><span class="line">    println <span class="string">'Hello World!'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task greeting &#123;</span><br><span class="line">    dependsOn <span class="string">'hello'</span></span><br><span class="line">    doLast &#123;</span><br><span class="line">        println <span class="string">'Morning~'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Execute-task-2"><a href="#Execute-task-2" class="headerlink" title="Execute task"></a>Execute task</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./gradlew greeting</span><br><span class="line">This is executed during the initialization phase.</span><br><span class="line"></span><br><span class="line">&gt; Configure project :</span><br><span class="line">Hello World!</span><br><span class="line"></span><br><span class="line">&gt; Task :hello</span><br><span class="line">Executed doFirst block!</span><br><span class="line">Executed doLast block!</span><br><span class="line"></span><br><span class="line">&gt; Task :greeting</span><br><span class="line">Morning~</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Dynamic-tasks"><a href="#Dynamic-tasks" class="headerlink" title="Dynamic tasks"></a>Dynamic tasks</h2><h3 id="build-gradle-3"><a href="#build-gradle-3" class="headerlink" title="build.gradle"></a>build.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="number">4.</span>times &#123; counter -&gt;</span><br><span class="line">    task <span class="string">"task$counter"</span> &#123;</span><br><span class="line">        doLast &#123;</span><br><span class="line">            println <span class="string">"I'm task number $counter"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Execute-task-3"><a href="#Execute-task-3" class="headerlink" title="Execute task"></a>Execute task</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./gradlew task1   </span><br><span class="line">This is executed during the initialization phase.</span><br><span class="line"></span><br><span class="line">&gt; Configure project :</span><br><span class="line">Hello World!</span><br><span class="line"></span><br><span class="line">&gt; Task :task1</span><br><span class="line">I<span class="string">'m task number 1</span></span><br></pre></td></tr></table></figure>
+<h2 id="Zip-task"><a href="#Zip-task" class="headerlink" title="Zip task"></a>Zip task</h2><h3 id="build-gradle-4"><a href="#build-gradle-4" class="headerlink" title="build.gradle"></a>build.gradle</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task zip(<span class="string">type:</span> Zip, <span class="string">group:</span> <span class="string">'Archive'</span>, <span class="string">description:</span> <span class="string">'Archives source in a zip file'</span>) &#123;</span><br><span class="line">    archiveName <span class="string">'demo.zip'</span></span><br><span class="line">    destinationDirectory = file(<span class="string">"$buildDir/dist"</span>)</span><br><span class="line">    from <span class="string">'src'</span>  <span class="comment">// from 這邊的設定還不是很懂</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Execute-Task"><a href="#Execute-Task" class="headerlink" title="Execute Task"></a>Execute Task</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">This is executed during the initialization phase.</span><br><span class="line"></span><br><span class="line">&gt; Configure project :</span><br><span class="line">Hello World!</span><br><span class="line">Zip files from src to /Users/jerry80409/eton/gradle-multi-module/build/dist</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jerry80409" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 jerry80409<br></p>
+                <p class="copyright text-muted">
+                    Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
+                    | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
+                    | Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'https-jerry80409-github-io';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
