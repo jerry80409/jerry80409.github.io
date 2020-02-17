@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="Note for learning">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="jerry80409">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="line-bot-sdk-5-mins">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Note for learning">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="PAWS">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="https://jerry80409.github.io/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>line-bot-sdk-5-mins - PAWS</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57149152-4', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">MENU</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/jerry80409">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>line-bot-sdk-5-mins</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-17
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/spring-boot/">#spring-boot</a> <a href="/tags/line-bot-sdk/">#line-bot-sdk</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/java/">java</a>/ <a href="/categories/java/spring-boot/">spring-boot</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="LINE-BOT-JAVA-SDK"><a href="#LINE-BOT-JAVA-SDK" class="headerlink" title="LINE BOT JAVA SDK"></a><a href="https://github.com/line/line-bot-sdk-java" target="_blank" rel="noopener">LINE BOT JAVA SDK</a></h2><p>寫點騙人氣的文章, <a href="https://github.com/line/line-bot-sdk-java" target="_blank" rel="noopener">LINE BOT JAVA SDK</a> 是我 Follow 很久的專案, 把 Source code 看過一次會學到很多東西, Servlet dispatch, API Client (OKHttp3 + Retrofit2), token 封裝等等, 使用 SDK 來開發的話, 大約 5mins 就可以把簡單的 LINE Server Side 的流程架設完畢。</p>
+<h2 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h2><ul>
+<li>Intellij 是我目前用最順手的工具, 先用 Intellij + <a href="https://start.spring.io/" target="_blank" rel="noopener">Spring boot initializr</a> 快速建立一個 gradle 專案吧  </li>
+<li>Dependencies: 選用 <code>Spring Web</code> 跟 <code>Spring Data JPA</code>, 資料庫我是用 Postgres (<code>PostgreSQL Driver</code>)</li>
+<li><p>手動加入 <code>line-bot-spring-boot</code> dependency</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">implementation &quot;com.linecorp.bot:line-bot-spring-boot:$rootProject.lineVersion&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不習慣用 Spring boot initializr 可以考慮在 build.gradle 貼上對應的 dependencies</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">ext &#123;</span><br><span class="line">  lineVersion = <span class="string">'3.3.1'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">  implementation <span class="string">'org.springframework.boot:spring-boot-starter-data-jpa'</span></span><br><span class="line">  implementation <span class="string">'org.springframework.boot:spring-boot-starter-web'</span></span><br><span class="line"></span><br><span class="line">  developmentOnly <span class="string">'org.springframework.boot:spring-boot-devtools'</span></span><br><span class="line">  compileOnly <span class="string">'org.projectlombok:lombok'</span></span><br><span class="line">  runtimeOnly <span class="string">'org.postgresql:postgresql'</span></span><br><span class="line"></span><br><span class="line">  annotationProcessor <span class="string">'org.springframework.boot:spring-boot-configuration-processor'</span></span><br><span class="line">  annotationProcessor <span class="string">'org.projectlombok:lombok'</span></span><br><span class="line"></span><br><span class="line">  implementation <span class="string">"com.linecorp.bot:line-bot-spring-boot:$rootProject.lineVersion"</span></span><br><span class="line"></span><br><span class="line">  testImplementation(<span class="string">'org.springframework.boot:spring-boot-starter-test'</span>) &#123;</span><br><span class="line">    exclude <span class="string">group:</span> <span class="string">'org.junit.vintage'</span>, <span class="string">module:</span> <span class="string">'junit-vintage-engine'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>去申請 LINE 開發需要的相關流程 (因為已經申請好很久了, 步驟有點忘了, 有錯再糾正我吧)</p>
+<ul>
+<li>Official Account: <a href="https://www.linebiz.com/tw/" target="_blank" rel="noopener">https://www.linebiz.com/tw/</a></li>
+<li>建立 Porvider 與 Channel: <a href="http://at-blog.line.me/tw/archives/provider_channel_setting.html" target="_blank" rel="noopener">http://at-blog.line.me/tw/archives/provider_channel_setting.html</a></li>
+</ul>
+</li>
+<li><p>記得到 LINE Develope Setting 後台打開對應的設定<br><img src="/img/line-bot-sdk-5-mins/line-bot-response-setting.png" alt="line-bot-response-setting"></p>
+</li>
+<li><p>申請 long-live channel token<br>進到 <a href="#">https://developers.line.biz/console/channel/{channel_id}/messaging-api</a> 底下有個設定, 把它打開就有了</p>
+</li>
+</ul>
+<h3 id="Spring-boot-application-properties-設定"><a href="#Spring-boot-application-properties-設定" class="headerlink" title="Spring-boot application.properties 設定"></a>Spring-boot application.properties 設定</h3><p>若使用 <strong>Spring boot initializr</strong> 初始化 Spring boot 專案, 預設是會建立一個空白的 application.properties, 真是懷念 LARAVE 完整的設定結構啊, 因為是空白的 application.properties 所以要勤快一點去爬文件</p>
+<blockquote>
+<p><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html</a></p>
+</blockquote>
+<hr>
+<p>我自己是習慣 <code>yml</code> 的格式, 所以我通常都會改為 <code>application.yml</code>, 記得要把 lint-bot 對應的 properties 設定上去, 不然會打不了 LINE Message APIs<br><figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 把變數抽到上面比較好替換, 如果你的 yml 後來變大怪獸的話這招很有用 XD</span></span><br><span class="line"><span class="attr">database:</span></span><br><span class="line"><span class="attr">  host:</span> <span class="string">localhost</span></span><br><span class="line"><span class="attr">  post:</span> <span class="number">5432</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">botdemo</span></span><br><span class="line"><span class="attr">  user:</span> <span class="string">postgres</span></span><br><span class="line"><span class="attr">  password:</span> </span><br><span class="line"></span><br><span class="line"><span class="comment"># spring boot</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="string">application.name:</span> <span class="string">line-bot</span></span><br><span class="line"><span class="attr">  datasource:</span></span><br><span class="line"><span class="attr">    name:</span> <span class="string">postgres</span></span><br><span class="line"><span class="attr">    url:</span> <span class="attr">jdbc:postgresql://$&#123;database.host&#125;:$&#123;database.post&#125;/$&#123;database.name&#125;</span></span><br><span class="line"><span class="attr">    username:</span> <span class="string">$&#123;database.user&#125;</span></span><br><span class="line"><span class="attr">    password:</span> <span class="string">$&#123;database.password&#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="string">profiles.active:</span> <span class="string">dev</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># line config</span></span><br><span class="line"><span class="comment"># https://github.com/line/line-bot-sdk-java/tree/master/line-bot-spring-boot</span></span><br><span class="line"><span class="string">line.bot:</span></span><br><span class="line">  <span class="string">handler.enabled:</span> <span class="literal">true</span></span><br><span class="line">  <span class="string">handler.path:</span> <span class="string">/callback</span></span><br><span class="line"><span class="attr">  channel-token:</span> <span class="string">'your-channel-token'</span></span><br><span class="line"><span class="attr">  channel-secret:</span> <span class="string">'your-channel-secret'</span></span><br><span class="line"><span class="attr">  channelTokenSupplyMode:</span> <span class="string">fixed</span></span><br><span class="line"><span class="attr">  connectTimeout:</span> <span class="number">60000</span></span><br><span class="line"><span class="attr">  readTimeout:</span> <span class="number">60000</span></span><br><span class="line"><span class="attr">  writeTimeout:</span> <span class="number">60000</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Demo-code"><a href="#Demo-code" class="headerlink" title="Demo code"></a>Demo code</h2><p>沒什麼好說的, 就是 copy + past, 這樣你就能輕鬆解決一張 Scrum 的 ticket XD;</p>
+<p>因為 LINE BOT SDK 幫你在 Servlet 做好訊息類型的 Dispatch, 所以 <code>Event</code> 跟 <code>MessageEvent</code> 的事件都幫你安排在不同的 handler methods, 所以程式碼會比自己寫 switch 來的乾淨一點, 也省下不少力氣去 Serialize 跟 deserialize 對新手來說, 或是參加 hackathon 都是省時省力的…<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@LineMessageHandler</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Handler</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@EventMapping</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> TextMessage <span class="title">handleTextMessageEvent</span><span class="params">(MessageEvent&lt;TextMessageContent&gt; event)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 這邊做的就是簡單的 echo</span></span><br><span class="line">    System.out.println(<span class="string">"event: "</span> + event);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> TextMessage(event.getMessage().getText());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@EventMapping</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleDefaultMessageEvent</span><span class="params">(Event event)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 就是加入聊天室, 離開聊天室, 還有一些有的沒的事件</span></span><br><span class="line">    System.out.println(<span class="string">"event: "</span> + event);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Testing"><a href="#Testing" class="headerlink" title="Testing"></a>Testing</h2><p>隨便從 LINE 發送一個訊息, 在 log 就能觀察到了<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">2020-02-17 23:10:35.456 DEBUG 62976 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : POST &quot;/callback&quot;, parameters=&#123;&#125;</span><br><span class="line">2020-02-17 23:10:35.459 DEBUG 62976 --- [nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.linecorp.bot.spring.boot.support.LineMessageHandlerSupport#callback(List)</span><br><span class="line">event: MessageEvent(replyToken=******, source=UserSource(userId=******), message=TextMessageContent(id=******, text=Hello ), timestamp=2020-02-17T15:10:34.337Z)</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : --&gt; POST https://api.line.me/v2/bot/message/reply</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Content-Type: application/json; charset=UTF-8</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Content-Length: 119</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Authorization: Bearer jwt token</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : User-Agent: line-botsdk-java/3.3.1</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : </span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : &#123;&quot;replyToken&quot;:&quot;******&quot;,&quot;messages&quot;:[&#123;&quot;type&quot;:&quot;text&quot;,&quot;text&quot;:&quot;Hello &quot;&#125;],&quot;notificationDisabled&quot;:false&#125;</span><br><span class="line">2020-02-17 23:10:35.625  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : --&gt; END POST (119-byte body)</span><br><span class="line">2020-02-17 23:10:35.631 DEBUG 62976 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using &apos;application/json&apos;, given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]</span><br><span class="line">2020-02-17 23:10:35.631 DEBUG 62976 --- [nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body</span><br><span class="line">2020-02-17 23:10:35.634 DEBUG 62976 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : &lt;-- 200 OK https://api.line.me/v2/bot/message/reply (301ms)</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Server: nginx</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Content-Type: application/json</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : x-line-request-id: 49908719-170f-42fc-a1c6-e00579385e21</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : x-content-type-options: nosniff</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : x-xss-protection: 1; mode=block</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : x-frame-options: DENY</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Vary: Accept-Encoding</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Expires: Mon, 17 Feb 2020 15:10:35 GMT</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Cache-Control: max-age=0, no-cache, no-store</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Pragma: no-cache</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Date: Mon, 17 Feb 2020 15:10:35 GMT</span><br><span class="line">2020-02-17 23:10:35.927  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : Connection: keep-alive</span><br><span class="line">2020-02-17 23:10:35.928  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : </span><br><span class="line">2020-02-17 23:10:35.928  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : &#123;&#125;</span><br><span class="line">2020-02-17 23:10:35.928  INFO 62976 --- [api.line.me/...] com.linecorp.bot.client.wire             : &lt;-- END HTTP (2-byte body)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Murmur"><a href="#Murmur" class="headerlink" title="Murmur"></a>Murmur</h2><p>以行銷的角度來說 bot 真的不是什麼太厲害的技術或是工具, bot 只是額外幫你觸及了另一群使用者, 如果沒有好的策略或是好的 UX 引導, 他就只是一個沒有靈魂的 bot, 還有協助你做 bot 的工具真的一堆, 其實不用自己花力氣做, 在做商業開發的前期我會推薦就先朝以下幾個平台工具去市場測試水溫看看 DAU, MAU, 先講就不傷身體, 再投入成本整合 prodfeed, payflow, etc., 我只是打雜的, 好像沒資格說太多… 就這樣XD</p>
+<ul>
+<li>Chatfuel - <a href="https://chatfuel.com/" target="_blank" rel="noopener">https://chatfuel.com/</a>, 老牌也很穩定 APIs 也更新很快, 但只支援 Facebook</li>
+<li>Bottender - <a href="https://bottender.js.org/" target="_blank" rel="noopener">https://bottender.js.org/</a>, 在開源社群很活躍的 APIs, 支援多種 Message 平台 (LINE, Facebook, SLACK, Telegram, etc.)</li>
+<li>Super8 - <a href="https://no8.io/" target="_blank" rel="noopener">https://no8.io/</a></li>
+<li>Chatcompose - <a href="https://www.chatcompose.com/" target="_blank" rel="noopener">https://www.chatcompose.com/</a></li>
+<li>GoSky - <a href="https://www.goskyai.com/" target="_blank" rel="noopener">https://www.goskyai.com/</a></li>
+<li>Chatbot - <a href="https://www.chatbot.com/" target="_blank" rel="noopener">https://www.chatbot.com/</a></li>
+<li>Intercom - <a href="https://www.intercom.com/" target="_blank" rel="noopener">https://www.intercom.com/</a></li>
+<li>Full2house - <a href="https://www.full2house.com/" target="_blank" rel="noopener">https://www.full2house.com/</a></li>
+<li>Manychat - <a href="https://manychat.com/" target="_blank" rel="noopener">https://manychat.com/</a></li>
+</ul>
+<p>列完根本就是紅海嘛… </p>
+<p>我覺得另一個體驗很棒的訂房 bot - <a href="https://www.snaptravel.com/" target="_blank" rel="noopener">https://www.snaptravel.com/</a>, 這才是我理想的產品啊 …</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+    <hr />
+    <h3>Comments:</h3>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/jerry80409" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 jerry80409<br></p>
+                <p class="copyright text-muted">
+                    Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
+                    | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
+                    | Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'https-jerry80409-github-io';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+</body>
+
+</html>
