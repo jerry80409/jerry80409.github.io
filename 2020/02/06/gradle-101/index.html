@@ -252,7 +252,7 @@
 <blockquote>
 <p>During this phase the project objects are configured. The build scripts of all projects which are part of the build are executed.</p>
 </blockquote>
-<h3 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h3><p>gradle 決定 task 的 subset(<strong>doFirst</strong>, <strong>doFirst</strong>), 經過 configuration 階段後再去執行。</p>
+<h3 id="Execution"><a href="#Execution" class="headerlink" title="Execution"></a>Execution</h3><p>gradle 決定 task 的 subset(<strong>doFirst</strong>, <strong>doLast</strong>), 經過 configuration 階段後再去執行。</p>
 <blockquote>
 <p>Gradle determines the subset of the tasks, created and configured during the configuration phase, to be executed. The subset is determined by the task name arguments passed to the gradle command and the current directory. Gradle then executes each of the selected tasks.</p>
 </blockquote>
@@ -320,7 +320,7 @@
 
                     
                 </ul>
-                <p class="copyright text-muted">&copy; 2020 jerry80409<br></p>
+                <p class="copyright text-muted">&copy; 2022 jerry80409<br></p>
                 <p class="copyright text-muted">
                     Page covers from <a target="_blank" href="https://unsplash.com/">Unsplash</a> 
                     | Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a> 
