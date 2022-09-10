@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jerry80409.github.io/"/>
-  <updated>2022-01-29T08:18:38.266Z</updated>
+  <updated>2022-09-10T09:14:26.052Z</updated>
   <id>https://jerry80409.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jvm-stack-and-heap</title>
+    <link href="https://jerry80409.github.io/2022/09/08/jvm-stack-and-heap/"/>
+    <id>https://jerry80409.github.io/2022/09/08/jvm-stack-and-heap/</id>
+    <published>2022-09-08T14:48:45.000Z</published>
+    <updated>2022-09-10T09:14:26.052Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><p>java 程式碼在運作時, 會透過 compiler 將可讀的程式碼編譯為 <code>*.class</code> 的檔案, 而這個檔案會透過<br>Java Virtual Machine (JVM) 將其轉為 byte code, 讓作業系統執行運作, 這邊就暫時這樣粗略地解釋吧。</p><p>在 JVM 裏面, 會把 java 的資料類型分為 primitive 與 reference, 這樣設計是考量 JVM 在運行之前希望由 compiler 先將所有資料進行檢查。</p><h3 id="Primitive-type"><a href="#Primitive-type" class="headerlink" title="Primitive type"></a>Primitive type</h3><p>primitive 類型支持如, <code>byte</code> (8bits), <code>short</code>(16bits), <code>int</code>(32bits), <code>long</code>(64bits), char(16bits)。</p><h3 id="Reference-type"><a href="#Reference-type" class="headerlink" title="Reference type"></a>Reference type</h3><p>而 reference 類型有, <code>class</code>, <code>array</code>, <code>interface</code>, 他們的默認值為 <code>null</code>。</p><h2 id="JVM-Stack"><a href="#JVM-Stack" class="headerlink" title="JVM Stack"></a>JVM Stack</h2><p>JVM stacks 會隨著 JVM 的 thread 建立而跟著建立, 而 threads 的 stack 是 private 的, 也就是不能與其他 thread 共用, stack 用來存放的東西叫做 frames（具體來說我並沒有很了解 frames）, 但在 IntelliJ debug 模式中可以確實觀察得到。<br><img src="/img/jvm-stack-and-heap/jvm-thread-and-frame-1.jpg" alt="jvm-thread-and-frame-1"></p><p><img src="/img/jvm-stack-and-heap/jvm-thread-and-frame-2.jpg" alt="jvm-thread-and-frame-2"></p><p>Stack 在資料結構的定義是一種後進先出的資料結構(LIFO), 如果有在刷 leetcode 的話這是一個很方便用於資料反轉 (Reverse) 的資料結構 XD。從圖中可以看出每一層 stack 的 methods<br>invoke (呼叫), 所以當程式拋出 exceptions 可以透過 <code>e.printStackTrace()</code> 來取得當前 thread 使用 stacks 所有過程。   </p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">// do something   </span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">  <span class="comment">// 輸出 exception 所記錄的 stack trace</span></span><br><span class="line">  e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="stack-的大小"><a href="#stack-的大小" class="headerlink" title="stack 的大小"></a>stack 的大小</h3><p>在 oracle 所定義的 jvm 規範中, 允許 stack 動態的增加擴充, 但也允許讓開發者去設定 jvm 的 stack 大小, 可以使用 java -Xss1M 這樣的設定去啟動 JVM, 宣告 stack 大小為 1Mb 空間。</p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">java -Xss:1m myApp</span><br></pre></td></tr></table></figure><p><img src="/img/jvm-stack-and-heap/jvm-stack-xss-setting.jpg" alt="jvm-thread-and-frame-2"></p><ul><li>當 stack 超過 threads 的最大 stack 限制時, 會拋出 <code>StackOverflowError</code>, 比如說無限遞迴。</li><li>當 jvm 要擴增 stack 空間時, 但沒有足夠的記憶體可以拿來擴展 stack 與 thread 時, 會拋出 <code>OutOfMemoryError</code>。</li></ul><h2 id="JVM-Heap"><a href="#JVM-Heap" class="headerlink" title="JVM Heap"></a>JVM Heap</h2><p>JVM Heap 是在 JVM 啟動時建立的, 但是屬於 Threads 共用的, 主要用來存放 class, array 類型, 由 GC 機制做回收, heap 跟 stack 一樣, 也是可以由開發者去定義大小。為了有最佳的效能, 官方頁面設定是說建議 <code>Xms</code> 與 <code>Xmx</code> 可設定相同的大小, 若沒有特別指定的話, 預設會使用系統的 25% 實體記憶體做設定, 另外 server mode 與 client<br>mode 也會有所差異。 </p><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">java -Xms:64m -Xmx:256m myApp</span><br></pre></td></tr></table></figure><p><img src="/img/jvm-stack-and-heap/jvm-heap-xms-setting.jpg" alt="jvm-heap-xms-setting"></p><h2 id="Java-Visualizer"><a href="#Java-Visualizer" class="headerlink" title="Java Visualizer"></a>Java Visualizer</h2><p>若想要更進一步學習 stack 與 heap 的運作的話, 在 intelliJ 的環境下可以安裝 <a href="https://fa20.datastructur.es/materials/guides/plugin.html#java-visualizer">java-visualizer</a>, 透過 debug 的 step over 就能確實觀察到 stack 與 heap 的運作了。</p><p><img src="/img/jvm-stack-and-heap/jvm-visualizer.jpg" alt="jvm-visualizer"></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul><li><a href="https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5.2">https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-2.html#jvms-2.5.2</a></li><li><a href="https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames">https://alvinalexander.com/scala/fp-book/recursion-jvm-stacks-stack-frames</a></li><li><a href="https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp1024112">https://docs.oracle.com/cd/E13150_01/jrockit_jvm/jrockit/jrdocs/refman/optionX.html#wp1024112</a></li><li><a href="https://fa20.datastructur.es/materials/guides/plugin.html#java-visualizer">https://fa20.datastructur.es/materials/guides/plugin.html#java-visualizer</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;JVM&quot;&gt;&lt;a href=&quot;#JVM&quot; class=&quot;headerlink&quot; title=&quot;JVM&quot;&gt;&lt;/a&gt;JVM&lt;/h2&gt;&lt;p&gt;java 程式碼在運作時, 會透過 compiler 將可讀的程式碼編譯為 &lt;code&gt;*.class&lt;/code&gt; 的檔案, 而這
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://jerry80409.github.io/categories/java/"/>
+    
+    
+      <category term="jvm" scheme="https://jerry80409.github.io/tags/jvm/"/>
+    
+  </entry>
   
   <entry>
     <title>為什麼要推薦 AssertJ</title>
@@ -192,9 +217,9 @@
       <category term="dba" scheme="https://jerry80409.github.io/categories/dba/"/>
     
     
-      <category term="postgres" scheme="https://jerry80409.github.io/tags/postgres/"/>
-    
       <category term="oracle" scheme="https://jerry80409.github.io/tags/oracle/"/>
+    
+      <category term="postgres" scheme="https://jerry80409.github.io/tags/postgres/"/>
     
   </entry>
   
@@ -245,31 +270,6 @@
     
     
       <category term="oracle" scheme="https://jerry80409.github.io/tags/oracle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>clean-and-pre-process-csv</title>
-    <link href="https://jerry80409.github.io/2019/08/02/clean-and-pre-process-csv/"/>
-    <id>https://jerry80409.github.io/2019/08/02/clean-and-pre-process-csv/</id>
-    <published>2019-08-02T06:04:17.000Z</published>
-    <updated>2019-08-03T06:24:55.864Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Open-CSV-features"><a href="#Open-CSV-features" class="headerlink" title="Open-CSV features"></a>Open-CSV features</h3><p>I recommed <a href="http://opencsv.sourceforge.net/#features" target="_blank" rel="noopener">open-csv</a>, It’s a nice and aweasome package :)</p><ul><li>Arbitrary numbers of values per line. （允許一行裡面有多個 elements, 避免跟 headers 對應問題）</li><li>Ignoring commas in quoted elements. (忽略 element 裡面的逗號, 避免誤判)</li><li>Handling quoted entries with embedded carriage returns (i.e. entries that span multiple lines). (忽略 element 裡面的換行符號)</li><li>Configurable separator and quote characters (or use sensible defaults). （可自定義 separator 與 quote 切分 csv 的字符）</li></ul><h3 id="Ugly-data"><a href="#Ugly-data" class="headerlink" title="Ugly data"></a>Ugly data</h3><p>雖然 open-csv 可以協助處理 element 裡面的 <strong>逗號</strong>, <strong>換行</strong> 的情境, 但一些狀態仍可能導致 open-csv 判讀錯誤失敗, 以下方的例子來說, <code>\&quot;</code> 與 <code>say &quot;don’t</code> 就會違反 open-csv 的 parsing rule, 導致 exception 發生, 如果是用 try catch 去處理, 就會造成資料缺漏, 違反資料正確性。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;id&quot;,&quot;title&quot;,&quot;member&quot;,&quot;msg&quot;</span><br><span class="line">&quot;1&quot;,&quot;title1&quot;,&quot;eric&quot;,&quot;Hello, I&apos;m Eric.&quot;</span><br><span class="line">&quot;2&quot;,&quot;title2&quot;,&quot;john&quot;,&quot;Hello, Eric, I have a question about your work, </span><br><span class="line"> plz contact me \&quot;</span><br><span class="line">&quot;3&quot;,&quot;title3&quot;,&quot;mike&quot;,&quot;This is Mike, I just want to say &quot;don’t try to be someone you are not meant to be.&quot;&quot;</span><br><span class="line">&quot;4&quot;,&quot;title4&quot;,&quot;jerry&quot;,NA</span><br></pre></td></tr></table></figure></p><h3 id="Clean-data"><a href="#Clean-data" class="headerlink" title="Clean data"></a>Clean data</h3><p>初步的想法就是, 把資料清洗一次, 先移除掉換行符號, 再把會影響 open-csv 處理的因素做 <code>replace()</code> 處理。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clean_data</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    Charset utf8 = Charset.defaultCharset();</span><br><span class="line">    File originFile = ResourceUtils.getFile(<span class="string">"sample.csv"</span>);</span><br><span class="line">    File cleanFile = ResourceUtils.getFile(<span class="string">"clean_sample.csv"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> (BufferedReader reader = Files.newBufferedReader(originFile.toPath(), utf8);</span><br><span class="line">         BufferedWriter writer = Files.newBufferedWriter(cleanFile.toPath(), utf8)) &#123;</span><br><span class="line">        String line;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((line = reader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line"></span><br><span class="line">            line = line.replace(<span class="string">",NA,"</span>, <span class="string">",\"-\","</span>);</span><br><span class="line">            line = line.replace(<span class="string">",NA"</span>, <span class="string">",\"-\""</span>);</span><br><span class="line">            line = line.replace(<span class="string">" \""</span>, <span class="string">" `"</span>);</span><br><span class="line">            line = line.replace(<span class="string">"\"\""</span>, <span class="string">"`\""</span>);</span><br><span class="line">            line = line.replace(<span class="string">"\\\""</span>, <span class="string">"\""</span>);</span><br><span class="line"></span><br><span class="line">            line = line.replaceAll(<span class="string">"\\r\\n|\\r|\\n"</span>, <span class="string">""</span>);</span><br><span class="line">            writer.append(line);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>再重新換行。<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clean_data_with_new_line</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    File originFile = ResourceUtils.getFile(<span class="string">"classpath:data/clean_sample.csv"</span>);</span><br><span class="line">    File cleanFile = ResourceUtils.getFile(<span class="string">"new_line_sample.csv"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span> (Reader reader = <span class="keyword">new</span> InputStreamReader(<span class="keyword">new</span> FileInputStream(originFile));</span><br><span class="line">         Writer writer = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(cleanFile))) &#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// in one line have three comm</span></span><br><span class="line">        <span class="keyword">int</span> commInLine = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> current;</span><br><span class="line">        <span class="keyword">int</span> countComm = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">boolean</span> shouldNewLine = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">char</span> currentChar;</span><br><span class="line">        <span class="keyword">char</span> beforeChar = <span class="string">' '</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> ((current = reader.read())!=-<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">            currentChar = (<span class="keyword">char</span>) current;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// two double quotation </span></span><br><span class="line">            <span class="keyword">if</span> (shouldNewLine</span><br><span class="line">                    &amp;&amp; beforeChar==<span class="string">'"'</span></span><br><span class="line">                    &amp;&amp; currentChar==<span class="string">'"'</span>) &#123;</span><br><span class="line"></span><br><span class="line">                writer.append(<span class="string">"\n"</span>);</span><br><span class="line">                writer.append(currentChar);</span><br><span class="line">                shouldNewLine = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                writer.append(currentChar);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// count comm and check new line status</span></span><br><span class="line">            <span class="keyword">if</span> (currentChar == <span class="string">','</span>) &#123;</span><br><span class="line">                countComm++;</span><br><span class="line">                <span class="keyword">if</span> (countComm == commInLine) &#123;</span><br><span class="line">                    countComm = <span class="number">0</span>;</span><br><span class="line">                    shouldNewLine = <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            beforeChar = (<span class="keyword">char</span>) current;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h3 id="Final-data"><a href="#Final-data" class="headerlink" title="Final data"></a>Final data</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;id&quot;,&quot;title&quot;,&quot;member&quot;,&quot;msg&quot;</span><br><span class="line">&quot;1&quot;,&quot;title1&quot;,&quot;eric&quot;,&quot;Hello, I&apos;m Eric.&quot;</span><br><span class="line">&quot;2&quot;,&quot;title2&quot;,&quot;john&quot;,&quot;Hello, Eric, I have a question about your work, plz contact me &quot;</span><br><span class="line">&quot;3&quot;,&quot;title3&quot;,&quot;mike&quot;,&quot;This is Mike, I just want to say `don’t try to be someone you are not meant to be.`&quot;</span><br><span class="line">&quot;4&quot;,&quot;title4&quot;,&quot;jerry&quot;,&quot;-&quot;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;Open-CSV-features&quot;&gt;&lt;a href=&quot;#Open-CSV-features&quot; class=&quot;headerlink&quot; title=&quot;Open-CSV features&quot;&gt;&lt;/a&gt;Open-CSV features&lt;/h3&gt;&lt;p&gt;I recommed
-      
-    
-    </summary>
-    
-      <category term="misc" scheme="https://jerry80409.github.io/categories/misc/"/>
-    
-    
-      <category term="open-csv" scheme="https://jerry80409.github.io/tags/open-csv/"/>
     
   </entry>
   
