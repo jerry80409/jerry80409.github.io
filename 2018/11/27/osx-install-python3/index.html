@@ -100,7 +100,8 @@
     <link rel="icon" href="/img/favicon.ico"/>
     
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PAWS" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -227,14 +228,24 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="python2"><a href="#python2" class="headerlink" title="python2"></a>python2</h3><p>OSX 自帶 python2, 查了一下, <a href="https://docs.python.org/3/using/mac.html" target="_blank" rel="noopener">官方建議</a> 是說不應該刪,</p>
+                <h3 id="python2"><a href="#python2" class="headerlink" title="python2"></a>python2</h3><p>OSX 自帶 python2, 查了一下, <a target="_blank" rel="noopener" href="https://docs.python.org/3/using/mac.html">官方建議</a> 是說不應該刪,</p>
 <blockquote>
-<p>The Apple-provided build of Python is installed in /System/Library/Frameworks/Python.framework and /usr/bin/python, respectively. You should never modify or delete these<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python --version</span><br><span class="line">Python 2.7.15</span><br></pre></td></tr></table></figure></p>
+<p>The Apple-provided build of Python is installed in &#x2F;System&#x2F;Library&#x2F;Frameworks&#x2F;Python.framework and &#x2F;usr&#x2F;bin&#x2F;python, respectively. You should never modify or delete these</p>
 </blockquote>
-<h3 id="ptyhon3"><a href="#ptyhon3" class="headerlink" title="ptyhon3"></a>ptyhon3</h3><p>忘記自己在什麼時候安裝好的, 所以 upgrade 就好<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade python3</span><br></pre></td></tr></table></figure></p>
-<p>upgrade 完成後, 會說明 OSX 的預設 python2.7 的相關環境與設定,<br>而 python3 的相關環境與設定分別是 <code>python3</code>, <code>python3-config</code>, <code>pip3</code>, etc.<br>這些都安裝在 <code>/usr/local/opt/python/libexec/bin</code> ,<br>如果你還想要使用 <strong>**python2.7</strong>, 再自行安裝 <code>brew install python@2</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Updating Homebrew...</span><br><span class="line">==&gt; Upgrading 1 outdated package, with result:</span><br><span class="line">python3 3.6.5 -&gt; 3.7.0</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">Python has been installed as</span><br><span class="line">  /usr/<span class="built_in">local</span>/bin/python3</span><br><span class="line"></span><br><span class="line">Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to</span><br><span class="line">`python3`, `python3-config`, `pip3` etc., respectively, have been installed into</span><br><span class="line">  /usr/<span class="built_in">local</span>/opt/python/libexec/bin</span><br><span class="line"></span><br><span class="line">If you need Homebrew<span class="string">'s Python 2.7 run</span></span><br><span class="line"><span class="string">  brew install python@2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Pip, setuptools, and wheel have been installed. To update them run</span></span><br><span class="line"><span class="string">  pip3 install --upgrade pip setuptools wheel</span></span><br></pre></td></tr></table></figure></p>
-<p>提示還說要升級, pip, setuptools, wheel<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install --upgrade pip setuptools wheel</span><br></pre></td></tr></table></figure></p>
-<p>這樣一來基本的開發環境已經完成了, 就先照 官方文件 來個互動吧<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python3</span><br><span class="line">Python 3.7.0 (default, Aug 22 2018, 15:22:56) </span><br><span class="line">[Clang 9.0.0 (clang-900.0.39.2)] on darwin</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; the_world_is_flat = True</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">if</span> the_world_is_flat:</span><br><span class="line">...     <span class="built_in">print</span>(<span class="string">"Be careful not to fall off!"</span>)</span><br><span class="line">...</span><br><span class="line">Be careful not to fall off!</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python --version</span><br><span class="line">Python 2.7.15</span><br></pre></td></tr></table></figure>
+
+<h3 id="ptyhon3"><a href="#ptyhon3" class="headerlink" title="ptyhon3"></a>ptyhon3</h3><p>忘記自己在什麼時候安裝好的, 所以 upgrade 就好</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade python3</span><br></pre></td></tr></table></figure>
+
+<p>upgrade 完成後, 會說明 OSX 的預設 python2.7 的相關環境與設定,<br>而 python3 的相關環境與設定分別是 <code>python3</code>, <code>python3-config</code>, <code>pip3</code>, etc.<br>這些都安裝在 <code>/usr/local/opt/python/libexec/bin</code> ,<br>如果你還想要使用 **<strong>python2.7</strong>, 再自行安裝 <code>brew install python@2</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Updating Homebrew...</span><br><span class="line">==&gt; Upgrading 1 outdated package, with result:</span><br><span class="line">python3 3.6.5 -&gt; 3.7.0</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">Python has been installed as</span><br><span class="line">  /usr/local/bin/python3</span><br><span class="line"></span><br><span class="line">Unversioned symlinks `python`, `python-config`, `pip` etc. pointing to</span><br><span class="line">`python3`, `python3-config`, `pip3` etc., respectively, have been installed into</span><br><span class="line">  /usr/local/opt/python/libexec/bin</span><br><span class="line"></span><br><span class="line">If you need Homebrew<span class="string">&#x27;s Python 2.7 run</span></span><br><span class="line"><span class="string">  brew install python@2</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Pip, setuptools, and wheel have been installed. To update them run</span></span><br><span class="line"><span class="string">  pip3 install --upgrade pip setuptools wheel</span></span><br></pre></td></tr></table></figure>
+
+<p>提示還說要升級, pip, setuptools, wheel</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip3 install --upgrade pip setuptools wheel</span><br></pre></td></tr></table></figure>
+
+<p>這樣一來基本的開發環境已經完成了, 就先照 官方文件 來個互動吧</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ python3</span><br><span class="line">Python 3.7.0 (default, Aug 22 2018, 15:22:56) </span><br><span class="line">[Clang 9.0.0 (clang-900.0.39.2)] on darwin</span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; the_world_is_flat = True</span><br><span class="line">&gt;&gt;&gt; <span class="keyword">if</span> the_world_is_flat:</span><br><span class="line">...     <span class="built_in">print</span>(<span class="string">&quot;Be careful not to fall off!&quot;</span>)</span><br><span class="line">...</span><br><span class="line">Be careful not to fall off!</span><br></pre></td></tr></table></figure>
+
 <p>先說說第一個雷, 就是 print 之前要 tab (4 個 space) 一下 :)</p>
 
 

@@ -100,7 +100,8 @@
     <link rel="icon" href="/img/favicon.ico"/>
     
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PAWS" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -227,8 +228,10 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h3><p>java8 支援 <code>Base64.Decoder</code>, <code>Base64.Encoder</code>, <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html" target="_blank" rel="noopener">API docs</a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> Base64.Decoder decoder = Base64.getDecoder();</span><br><span class="line"><span class="keyword">final</span> Base64.Encoder encoder = Base64.getEncoder();</span><br><span class="line"><span class="keyword">final</span> String text = <span class="string">"字串文字"</span>;</span><br><span class="line"><span class="keyword">final</span> <span class="keyword">byte</span>[] textByte = text.getBytes(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//編碼</span></span><br><span class="line"><span class="keyword">final</span> String encodedText = encoder.encodeToString(textByte);</span><br><span class="line"></span><br><span class="line"><span class="comment">//解碼</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> String(decoder.decode(encodedText), <span class="string">"UTF-8"</span>));</span><br></pre></td></tr></table></figure></p>
-<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>text -&gt; ascii -&gt; 取 6bits -&gt; mapping 64 code -&gt; 空白捕 ‘=’<br><a href="base64 wiki : https://zh.wikipedia.org/wiki/Base64">https://zh.wikipedia.org/wiki/Base64</a></p>
+                <h3 id="Base64"><a href="#Base64" class="headerlink" title="Base64"></a>Base64</h3><p>java8 支援 <code>Base64.Decoder</code>, <code>Base64.Encoder</code>, <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html">API docs</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> Base64.<span class="type">Decoder</span> <span class="variable">decoder</span> <span class="operator">=</span> Base64.getDecoder();</span><br><span class="line"><span class="keyword">final</span> Base64.<span class="type">Encoder</span> <span class="variable">encoder</span> <span class="operator">=</span> Base64.getEncoder();</span><br><span class="line"><span class="keyword">final</span> <span class="type">String</span> <span class="variable">text</span> <span class="operator">=</span> <span class="string">&quot;字串文字&quot;</span>;</span><br><span class="line"><span class="keyword">final</span> <span class="type">byte</span>[] textByte = text.getBytes(<span class="string">&quot;UTF-8&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//編碼</span></span><br><span class="line"><span class="keyword">final</span> <span class="type">String</span> <span class="variable">encodedText</span> <span class="operator">=</span> encoder.encodeToString(textByte);</span><br><span class="line"></span><br><span class="line"><span class="comment">//解碼</span></span><br><span class="line">System.out.println(<span class="keyword">new</span> <span class="title class_">String</span>(decoder.decode(encodedText), <span class="string">&quot;UTF-8&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p>text -&gt; ascii -&gt; 取 6bits -&gt; mapping 64 code -&gt; 空白捕 ‘&#x3D;’<br>[<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Base64]">https://zh.wikipedia.org/wiki/Base64]</a>(base64 wiki : <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Base64">https://zh.wikipedia.org/wiki/Base64</a>)</p>
 
 
                 

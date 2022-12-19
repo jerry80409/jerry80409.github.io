@@ -100,7 +100,8 @@
     <link rel="icon" href="/img/favicon.ico"/>
     
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PAWS" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -232,7 +233,7 @@
 <p>If true, this option enables various workarounds to enable Git to work better on filesystems that are not case sensitive, like FAT. For example, if a directory listing finds “makefile” when Git expects “Makefile”, Git will assume it is really the same file, and continue to remember it as “Makefile”.<br>The default is false, except git-clone[1] or git-init[1] will probe and set core.ignoreCase true if appropriate when the repository is created.</p>
 </blockquote>
 <p><code>core.ignoreCase</code> 預設是 <code>false</code> (大小寫敏感), 所以如果沒有改這個 config, <code>push</code> 上去就會長出兩個名稱一樣, 但大小寫寫法不一樣的資料夾, <code>FolderA</code> 跟 <code>foldera</code>, 但我還是不建議把 <code>core.ignoreCase</code> 改為 <code>true</code>, 怕之後開發一團亂之類的。</p>
-<h3 id="手動解"><a href="#手動解" class="headerlink" title="手動解"></a>手動解</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git mv improper_Case improve_case2</span><br><span class="line">git mv improve_case2 improve_case</span><br><span class="line">git commit -m <span class="string">"modified folder cases"</span></span><br></pre></td></tr></table></figure>
+<h3 id="手動解"><a href="#手動解" class="headerlink" title="手動解"></a>手動解</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">mv</span> improper_Case improve_case2</span><br><span class="line">git <span class="built_in">mv</span> improve_case2 improve_case</span><br><span class="line">git commit -m <span class="string">&quot;modified folder cases&quot;</span></span><br></pre></td></tr></table></figure>
 
                 
             </div>

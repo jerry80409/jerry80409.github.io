@@ -100,7 +100,8 @@
     <link rel="icon" href="/img/favicon.ico"/>
     
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PAWS" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -227,15 +228,15 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="設定-etc-hosts"><a href="#設定-etc-hosts" class="headerlink" title="設定 /etc/hosts"></a>設定 /etc/hosts</h3><p>此文件是用來做 DNS (Domain-Name-Service), 編輯 <code>/etc/hosts</code> 可以讓機器辨識其他主機, 所以可以給 target server 一個 Domain Name, 方便 Localhost 辨識與登入。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure></p>
+                <h3 id="設定-x2F-etc-x2F-hosts"><a href="#設定-x2F-etc-x2F-hosts" class="headerlink" title="設定 &#x2F;etc&#x2F;hosts"></a>設定 &#x2F;etc&#x2F;hosts</h3><p>此文件是用來做 DNS (Domain-Name-Service), 編輯 <code>/etc/hosts</code> 可以讓機器辨識其他主機, 所以可以給 target server 一個 Domain Name, 方便 Localhost 辨識與登入。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/hosts</span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 加入一組 </span></span><br><span class="line">192.168.10.10   target.com</span><br></pre></td></tr></table></figure>
+
 <h3 id="使用-ssh-key"><a href="#使用-ssh-key" class="headerlink" title="使用 ssh-key"></a>使用 ssh-key</h3><p>別再用密碼啦, ssh (Secure SHELL protocol) 本身就是希望你能透過 <code>非對稱金鑰</code> 來進行連線, 非對稱金鑰通常是由一組 <code>public key</code>, <code>private key</code> 組成, 所以先在本地生成一組 ssh key</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ssh key generated</span></span><br><span class="line">ssh-keygen -t rsa -b 2048</span><br><span class="line"></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/username/.ssh/id_rsa): </span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.pub.</span><br></pre></td></tr></table></figure>
 <hr>
-<p>上傳到 target server, 這個動作主要是把 public key 上傳<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-copy-id user@target.com</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>login 就變簡潔了<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh user@target.com</span><br></pre></td></tr></table></figure></p>
-
+<h2 id="上傳到-target-server-這個動作主要是把-public-key-上傳"><a href="#上傳到-target-server-這個動作主要是把-public-key-上傳" class="headerlink" title="上傳到 target server, 這個動作主要是把 public key 上傳"></a>上傳到 target server, 這個動作主要是把 public key 上傳<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-copy-id user@target.com</span><br></pre></td></tr></table></figure></h2><p>login 就變簡潔了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh user@target.com</span><br></pre></td></tr></table></figure>
 
                 
             </div>

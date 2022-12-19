@@ -100,7 +100,8 @@
     <link rel="icon" href="/img/favicon.ico"/>
     
 
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="PAWS" type="application/atom+xml">
+</head>
 
 
 <body>
@@ -227,11 +228,17 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h3 id="同步-local-branch"><a href="#同步-local-branch" class="headerlink" title="同步 local branch"></a>同步 local branch</h3><p>在團隊開發過程中, 多多少少都會有些意外, 還好這個不是災難性的意外, (笑<br>這個問題是發生在 <code>git pull origin master</code>, <code>pull master</code> 其實會做兩件事 <code>git fetch</code> 跟 <code>git merge</code>, 因為本地還存在 a branch 所以會檢查 remote 的 a branch 做 merge, 但 remote 已經 PR 結束了, 被 merge 到 master 裡面, 按照開發流程 merge 完成的 branch 會被刪除, 所以 remote 的 a branch 沒了, 因此噴了一個警告。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error: cannot lock ref &apos;refs/remotes/origin/feature/lambda/dynamoDb&apos;: &apos;refs/remotes/origin/feature/lambda&apos; exists; cannot create &apos;refs/remotes/origin/feature/lambda/dynamoDb&apos;</span><br></pre></td></tr></table></figure></p>
-<p>SourceTree 給我的提示是這樣, 所以就查了一下 <code>prune</code> 的用途<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error: some local refs could not be updated; try running</span><br><span class="line"> &apos;git remote prune origin&apos; to remove any old, conflicting branches</span><br></pre></td></tr></table></figure></p>
-<h3 id="Git-remote-prune"><a href="#Git-remote-prune" class="headerlink" title="Git remote prune"></a>Git remote prune</h3><p>先看一下文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">prune</span><br><span class="line">           Deletes stale references associated with &lt;name&gt;. By default, stale</span><br><span class="line">           remote-tracking branches under &lt;name&gt; are deleted, but depending on</span><br><span class="line">           global configuration and the configuration of the remote we might</span><br><span class="line">           even prune local tags that haven&apos;t been pushed there. Equivalent to</span><br><span class="line">           git fetch --prune &lt;name&gt;, except that no new references will be</span><br><span class="line">           fetched.</span><br><span class="line"></span><br><span class="line">           See the PRUNING section of git-fetch(1) for what it&apos;ll prune</span><br><span class="line">           depending on various configuration.</span><br><span class="line"></span><br><span class="line">           With --dry-run option, report what branches will be pruned, but do</span><br><span class="line">           not actually prune them.</span><br></pre></td></tr></table></figure></p>
-<p>所以我比較建議的做法是, 先跑一次 <code>--dry-run</code> 看看哪些會刪除, 再執行 <code>prune origin</code>, 這樣就能保持 local 跟 remote 的 branch 同步。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote prune --dry-run origin    # 確定一下有沒有可能會刪錯</span><br><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure></p>
+                <h3 id="同步-local-branch"><a href="#同步-local-branch" class="headerlink" title="同步 local branch"></a>同步 local branch</h3><p>在團隊開發過程中, 多多少少都會有些意外, 還好這個不是災難性的意外, (笑<br>這個問題是發生在 <code>git pull origin master</code>, <code>pull master</code> 其實會做兩件事 <code>git fetch</code> 跟 <code>git merge</code>, 因為本地還存在 a branch 所以會檢查 remote 的 a branch 做 merge, 但 remote 已經 PR 結束了, 被 merge 到 master 裡面, 按照開發流程 merge 完成的 branch 會被刪除, 所以 remote 的 a branch 沒了, 因此噴了一個警告。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">error: cannot lock ref &#x27;refs/remotes/origin/feature/lambda/dynamoDb&#x27;: &#x27;refs/remotes/origin/feature/lambda&#x27; exists; cannot create &#x27;refs/remotes/origin/feature/lambda/dynamoDb&#x27;</span><br></pre></td></tr></table></figure>
 
+<p>SourceTree 給我的提示是這樣, 所以就查了一下 <code>prune</code> 的用途</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">error: some local refs could not be updated; try running</span><br><span class="line"> &#x27;git remote prune origin&#x27; to remove any old, conflicting branches</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git-remote-prune"><a href="#Git-remote-prune" class="headerlink" title="Git remote prune"></a>Git remote prune</h3><p>先看一下文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">prune</span><br><span class="line">           Deletes stale references associated with &lt;name&gt;. By default, stale</span><br><span class="line">           remote-tracking branches under &lt;name&gt; are deleted, but depending on</span><br><span class="line">           global configuration and the configuration of the remote we might</span><br><span class="line">           even prune local tags that haven&#x27;t been pushed there. Equivalent to</span><br><span class="line">           git fetch --prune &lt;name&gt;, except that no new references will be</span><br><span class="line">           fetched.</span><br><span class="line"></span><br><span class="line">           See the PRUNING section of git-fetch(1) for what it&#x27;ll prune</span><br><span class="line">           depending on various configuration.</span><br><span class="line"></span><br><span class="line">           With --dry-run option, report what branches will be pruned, but do</span><br><span class="line">           not actually prune them.</span><br></pre></td></tr></table></figure>
+
+<p>所以我比較建議的做法是, 先跑一次 <code>--dry-run</code> 看看哪些會刪除, 再執行 <code>prune origin</code>, 這樣就能保持 local 跟 remote 的 branch 同步。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git remote prune --dry-run origin    # 確定一下有沒有可能會刪錯</span><br><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
 
                 
             </div>
